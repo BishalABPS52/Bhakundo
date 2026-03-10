@@ -1,0 +1,1236 @@
+{
+  "537959": {
+    "home_team": "Burnley FC",
+    "away_team": "Everton FC",
+    "gameweek": 18,
+    "predicted_score": {
+      "home": 1,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.5245633125305176,
+      "draw": 0.3737683594226837,
+      "home_win": 0.10166831314563751
+    },
+    "confidence": {
+      "value": 0.4458788335323334,
+      "percentage": "44.6%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (45%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "base": {
+        "confidence": 0.5451468229293823,
+        "level": "LOW",
+        "priority": 2
+      },
+      "lineup": {
+        "confidence": 0.5245633125305176,
+        "level": "LOW",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Away Win",
+    "top_priority_model": "score",
+    "base_outcome_probabilities": {
+      "away_win": 0.5451468229293823,
+      "draw": 0.1684386134147644,
+      "home_win": 0.28641459345817566
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.5245633125305176,
+      "draw": 0.3737683594226837,
+      "home_win": 0.10166831314563751
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 19,
+      "points": 11,
+      "form": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "D"
+      ]
+    },
+    "away_standing": {
+      "position": 10,
+      "points": 24,
+      "form": [
+        "L",
+        "W",
+        "W",
+        "L",
+        "L"
+      ]
+    },
+    "home_stats": {
+      "ppg": 0.7,
+      "avg_goals_scored": 1.2,
+      "avg_goals_conceded": 1.9,
+      "win_rate": 20,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.3,
+      "avg_goals_scored": 0.9,
+      "avg_goals_conceded": 1.3,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "timestamp": "2025-12-27T19:43:46.055989"
+  },
+  "537963": {
+    "home_team": "Nottingham Forest FC",
+    "away_team": "Manchester City FC",
+    "gameweek": 18,
+    "predicted_score": {
+      "home": 1,
+      "away": 3
+    },
+    "outcome_probabilities": {
+      "away_win": 0.9256159067153931,
+      "draw": 0.05031459406018257,
+      "home_win": 0.024069447070360184
+    },
+    "confidence": {
+      "value": 0.7867735624313354,
+      "percentage": "78.7%",
+      "level": "HIGH",
+      "color": "green",
+      "text": "HIGH (79%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "lineup": {
+        "confidence": 0.9256159067153931,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "base": {
+        "confidence": 0.820605993270874,
+        "level": "HIGH",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Away Win",
+    "top_priority_model": "lineup",
+    "base_outcome_probabilities": {
+      "away_win": 0.820605993270874,
+      "draw": 0.11145564168691635,
+      "home_win": 0.06793839484453201
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.9256159067153931,
+      "draw": 0.05031459406018257,
+      "home_win": 0.024069447070360184
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 17,
+      "points": 18,
+      "form": [
+        "L",
+        "W",
+        "L",
+        "W",
+        "L"
+      ]
+    },
+    "away_standing": {
+      "position": 2,
+      "points": 37,
+      "form": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.3,
+      "avg_goals_scored": 1.2,
+      "avg_goals_conceded": 1.4,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 2.4,
+      "avg_goals_scored": 2.6,
+      "avg_goals_conceded": 1,
+      "win_rate": 80,
+      "availability": 85
+    },
+    "timestamp": "2025-12-27T20:11:37.783156"
+  },
+  "537957": {
+    "home_team": "Arsenal FC",
+    "away_team": "Brighton & Hove Albion FC",
+    "gameweek": 18,
+    "predicted_score": {
+      "home": 2,
+      "away": 1
+    },
+    "outcome_probabilities": {
+      "away_win": 0.05223909765481949,
+      "draw": 0.13936658203601837,
+      "home_win": 0.8083942532539368
+    },
+    "confidence": {
+      "value": 0.6871351599693298,
+      "percentage": "68.7%",
+      "level": "MEDIUM",
+      "color": "orange",
+      "text": "MEDIUM (69%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "lineup": {
+        "confidence": 0.8083942532539368,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 2
+      },
+      "base": {
+        "confidence": 0.6291210055351257,
+        "level": "MEDIUM",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Home Win",
+    "top_priority_model": "lineup",
+    "base_outcome_probabilities": {
+      "away_win": 0.08042767643928528,
+      "draw": 0.2904512882232666,
+      "home_win": 0.6291210055351257
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.05223909765481949,
+      "draw": 0.13936658203601837,
+      "home_win": 0.8083942532539368
+    },
+    "score_outcome": "home_win",
+    "home_standing": {
+      "position": 1,
+      "points": 39,
+      "form": [
+        "D",
+        "W",
+        "L",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 9,
+      "points": 24,
+      "form": [
+        "W",
+        "L",
+        "D",
+        "L",
+        "D"
+      ]
+    },
+    "home_stats": {
+      "ppg": 2.3,
+      "avg_goals_scored": 1.7,
+      "avg_goals_conceded": 0.7,
+      "win_rate": 70,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.5,
+      "avg_goals_scored": 1.5,
+      "avg_goals_conceded": 1.3,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "timestamp": "2025-12-27T20:51:48.317740"
+  },
+  "537958": {
+    "home_team": "Brentford FC",
+    "away_team": "AFC Bournemouth",
+    "gameweek": 18,
+    "predicted_score": {
+      "home": 2,
+      "away": 1
+    },
+    "outcome_probabilities": {
+      "away_win": 0.2890668213367462,
+      "draw": 0.1304749995470047,
+      "home_win": 0.5804582238197327
+    },
+    "confidence": {
+      "value": 0.4933895170688629,
+      "percentage": "49.3%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (49%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "base": {
+        "confidence": 0.7165727019309998,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "lineup": {
+        "confidence": 0.5804582238197327,
+        "level": "LOW",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Home Win",
+    "top_priority_model": "score",
+    "base_outcome_probabilities": {
+      "away_win": 0.24152648448944092,
+      "draw": 0.041900765150785446,
+      "home_win": 0.7165727019309998
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.2890668213367462,
+      "draw": 0.1304749995470047,
+      "home_win": 0.5804582238197327
+    },
+    "score_outcome": "home_win",
+    "home_standing": {
+      "position": 12,
+      "points": 23,
+      "form": [
+        "W",
+        "L",
+        "L",
+        "D",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 15,
+      "points": 22,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "D",
+        "D"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.6,
+      "avg_goals_scored": 1.5,
+      "avg_goals_conceded": 1.3,
+      "win_rate": 50,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 0.8,
+      "avg_goals_scored": 1.5,
+      "avg_goals_conceded": 2.1,
+      "win_rate": 10,
+      "availability": 85
+    },
+    "timestamp": "2025-12-27T20:51:51.550956"
+  },
+  "537961": {
+    "home_team": "Liverpool FC",
+    "away_team": "Wolverhampton Wanderers FC",
+    "gameweek": 18,
+    "predicted_score": {
+      "home": 1,
+      "away": 1
+    },
+    "outcome_probabilities": {
+      "away_win": 0.023307777009904385,
+      "draw": 0.280214324593544,
+      "home_win": 0.5464778542518616
+    },
+    "confidence": {
+      "value": 0.38253449797630307,
+      "percentage": "38.3%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (38%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "two_agree",
+      "text": "~ Majority consensus"
+    },
+    "model_priorities": {
+      "base": {
+        "confidence": 0.612403929233551,
+        "level": "MEDIUM",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.677240252494812,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "MODERATE",
+    "prediction_statement": "Majority consensus - Home Win",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.024287149310112,
+      "draw": 0.3633089065551758,
+      "home_win": 0.612403929233551
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.03094640001654625,
+      "draw": 0.29181331396102905,
+      "home_win": 0.677240252494812
+    },
+    "score_outcome": "draw",
+    "home_standing": {
+      "position": 6,
+      "points": 29,
+      "form": [
+        "W",
+        "D",
+        "D",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 20,
+      "points": 2,
+      "form": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "L"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.4,
+      "avg_goals_scored": 1.5,
+      "avg_goals_conceded": 1.6,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 0,
+      "avg_goals_scored": 0.4,
+      "avg_goals_conceded": 2.3,
+      "win_rate": 0,
+      "availability": 85
+    },
+    "timestamp": "2025-12-27T19:11:25.800924"
+  },
+  "537966": {
+    "home_team": "Crystal Palace FC",
+    "away_team": "Fulham FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 2,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.31545390188694,
+      "draw": 0.2100764736533165,
+      "home_win": 0.3244696259498596
+    },
+    "confidence": {
+      "value": 0.1784582942724228,
+      "percentage": "17.8%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (18%)"
+    },
+    "agreement": {
+      "aligned": false,
+      "level": "disagree",
+      "text": "! Models disagree"
+    },
+    "model_priorities": {
+      "base": {
+        "confidence": 0.47379228472709656,
+        "level": "LOW",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.4017176628112793,
+        "level": "LOW",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.6,
+        "level": "MEDIUM",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "DIFFICULT",
+    "prediction_statement": "Mixed signals - Home Win (uncertain)",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.3439262807369232,
+      "draw": 0.18228141963481903,
+      "home_win": 0.47379228472709656
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.4017176628112793,
+      "draw": 0.3201245963573456,
+      "home_win": 0.2781577408313751
+    },
+    "score_outcome": "draw",
+    "home_standing": {
+      "position": 11,
+      "points": 26,
+      "form": [
+        "W",
+        "W",
+        "L",
+        "L",
+        "L"
+      ]
+    },
+    "away_standing": {
+      "position": 12,
+      "points": 26,
+      "form": [
+        "L",
+        "L",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.3,
+      "avg_goals_scored": 0.9,
+      "avg_goals_conceded": 1.2,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.8,
+      "avg_goals_scored": 1.7,
+      "avg_goals_conceded": 1.4,
+      "win_rate": 60,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T14:26:51.744900"
+  },
+  "537971": {
+    "home_team": "Liverpool FC",
+    "away_team": "Leeds United FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 2,
+      "away": 1
+    },
+    "outcome_probabilities": {
+      "away_win": 0.24008723348379135,
+      "draw": 0.16146712377667427,
+      "home_win": 0.4484456777572632
+    },
+    "confidence": {
+      "value": 0.31391197443008423,
+      "percentage": "31.4%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (31%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "two_agree",
+      "text": "~ Majority consensus"
+    },
+    "model_priorities": {
+      "base": {
+        "confidence": 0.43196552991867065,
+        "level": "LOW",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.7933598756790161,
+        "level": "HIGH",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "MODERATE",
+    "prediction_statement": "Majority consensus - Home Win",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.43196552991867065,
+      "draw": 0.2766973376274109,
+      "home_win": 0.29133719205856323
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.11425686627626419,
+      "draw": 0.09238331019878387,
+      "home_win": 0.7933598756790161
+    },
+    "score_outcome": "home_win",
+    "home_standing": {
+      "position": 4,
+      "points": 32,
+      "form": [
+        "D",
+        "D",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 16,
+      "points": 20,
+      "form": [
+        "W",
+        "D",
+        "D",
+        "W",
+        "D"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.7,
+      "avg_goals_scored": 1.6,
+      "avg_goals_conceded": 1.5,
+      "win_rate": 50,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.2,
+      "avg_goals_scored": 1.8,
+      "avg_goals_conceded": 1.9,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T14:27:08.944983"
+  },
+  "537965": {
+    "home_team": "Sunderland AFC",
+    "away_team": "Manchester City FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 2,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.232501819729805,
+      "draw": 0.6190733909606934,
+      "home_win": 0.14842480421066284
+    },
+    "confidence": {
+      "value": 0.5262123823165893,
+      "percentage": "52.6%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (53%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.6190733909606934,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "base": {
+        "confidence": 0.42896759510040283,
+        "level": "LOW",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Draw",
+    "top_priority_model": "score",
+    "base_outcome_probabilities": {
+      "away_win": 0.3084007799625397,
+      "draw": 0.42896759510040283,
+      "home_win": 0.2626316249370575
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.232501819729805,
+      "draw": 0.6190733909606934,
+      "home_win": 0.14842480421066284
+    },
+    "score_outcome": "draw",
+    "home_standing": {
+      "position": 7,
+      "points": 28,
+      "form": [
+        "D",
+        "L",
+        "W",
+        "D",
+        "D"
+      ]
+    },
+    "away_standing": {
+      "position": 2,
+      "points": 40,
+      "form": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.4,
+      "avg_goals_scored": 1.1,
+      "avg_goals_conceded": 1.2,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 2.4,
+      "avg_goals_scored": 2.6,
+      "avg_goals_conceded": 1.1,
+      "win_rate": 80,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T14:27:17.475080"
+  },
+  "537968": {
+    "home_team": "Brentford FC",
+    "away_team": "Tottenham Hotspur FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 1,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.45697420835494995,
+      "draw": 0.2979145646095276,
+      "home_win": 0.24511125683784485
+    },
+    "confidence": {
+      "value": 0.38842807710170746,
+      "percentage": "38.8%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (39%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "model_priorities": {
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "base": {
+        "confidence": 0.6058173179626465,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "lineup": {
+        "confidence": 0.45697420835494995,
+        "level": "LOW",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Away Win",
+    "top_priority_model": "score",
+    "base_outcome_probabilities": {
+      "away_win": 0.6058173179626465,
+      "draw": 0.2108709067106247,
+      "home_win": 0.18331173062324524
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.45697420835494995,
+      "draw": 0.2979145646095276,
+      "home_win": 0.24511125683784485
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 9,
+      "points": 26,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 13,
+      "points": 25,
+      "form": [
+        "D",
+        "W",
+        "L",
+        "L",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.6,
+      "avg_goals_scored": 1.7,
+      "avg_goals_conceded": 1.4,
+      "win_rate": 50,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.1,
+      "avg_goals_scored": 1.3,
+      "avg_goals_conceded": 1.6,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T14:27:34.427178"
+  },
+  "gw19_7": {
+    "home_team": "Crystal Palace FC",
+    "away_team": "Fulham FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 1,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.7008588314056396,
+      "draw": 0.1600622981786728,
+      "home_win": 0.13907887041568756
+    },
+    "confidence": {
+      "value": 0.72,
+      "percentage": "72.0%",
+      "level": "MEDIUM",
+      "color": "orange",
+      "text": "MEDIUM (72%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "two_agree",
+      "text": "~ Majority consensus"
+    },
+    "prediction_source": "Lineup + Score Agree",
+    "bhakundo_verified": false,
+    "model_used": "lineup",
+    "model_priorities": {
+      "base": {
+        "confidence": 0.47379228472709656,
+        "level": "LOW",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.4017176628112793,
+        "level": "LOW",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "MODERATE",
+    "prediction_statement": "Majority consensus - Away Win",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.3439262807369232,
+      "draw": 0.18228141963481903,
+      "home_win": 0.47379228472709656
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.4017176628112793,
+      "draw": 0.3201245963573456,
+      "home_win": 0.2781577408313751
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 11,
+      "points": 26,
+      "form": [
+        "W",
+        "W",
+        "L",
+        "L",
+        "L"
+      ]
+    },
+    "away_standing": {
+      "position": 12,
+      "points": 26,
+      "form": [
+        "L",
+        "L",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.3,
+      "avg_goals_scored": 0.9,
+      "avg_goals_conceded": 1.2,
+      "win_rate": 40,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.8,
+      "avg_goals_scored": 1.7,
+      "avg_goals_conceded": 1.4,
+      "win_rate": 60,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T15:08:33.306099"
+  },
+  "gw19_9": {
+    "home_team": "Sunderland AFC",
+    "away_team": "Manchester City FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 1,
+      "away": 5
+    },
+    "outcome_probabilities": {
+      "away_win": 0.27045130729675293,
+      "draw": 0.5240204930305481,
+      "home_win": 0.20552821457386017
+    },
+    "confidence": {
+      "value": 0.88,
+      "percentage": "88.0%",
+      "level": "HIGH",
+      "color": "green",
+      "text": "HIGH (88%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "two_agree",
+      "text": "~ Majority consensus"
+    },
+    "prediction_source": "\ud83c\udfaf BHAKUNDO PREDICTS (Base + Lineup Agree)",
+    "bhakundo_verified": true,
+    "model_used": "bhakundo",
+    "model_priorities": {
+      "base": {
+        "confidence": 0.42896759510040283,
+        "level": "LOW",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.6190733909606934,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "MODERATE",
+    "prediction_statement": "Majority consensus - Draw",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.3084007799625397,
+      "draw": 0.42896759510040283,
+      "home_win": 0.2626316249370575
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.232501819729805,
+      "draw": 0.6190733909606934,
+      "home_win": 0.14842480421066284
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 7,
+      "points": 28,
+      "form": [
+        "D",
+        "L",
+        "W",
+        "D",
+        "D"
+      ]
+    },
+    "away_standing": {
+      "position": 2,
+      "points": 40,
+      "form": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.4,
+      "avg_goals_scored": 1.1,
+      "avg_goals_conceded": 1.2,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 2.4,
+      "avg_goals_scored": 2.6,
+      "avg_goals_conceded": 1.1,
+      "win_rate": 80,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T15:08:36.805136"
+  },
+  "gw19_10": {
+    "home_team": "Brentford FC",
+    "away_team": "Tottenham Hotspur FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 1,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.45697420835494995,
+      "draw": 0.2979145646095276,
+      "home_win": 0.24511125683784485
+    },
+    "confidence": {
+      "value": 0.38842807710170746,
+      "percentage": "38.8%",
+      "level": "LOW",
+      "color": "red",
+      "text": "LOW (39%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "all_agree",
+      "text": "\u2713 All models agree"
+    },
+    "prediction_source": "All Models Agree",
+    "bhakundo_verified": false,
+    "model_used": "lineup",
+    "model_priorities": {
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 1
+      },
+      "base": {
+        "confidence": 0.6058173179626465,
+        "level": "MEDIUM",
+        "priority": 2
+      },
+      "lineup": {
+        "confidence": 0.45697420835494995,
+        "level": "LOW",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "EASY",
+    "prediction_statement": "All models strongly agree - Away Win",
+    "top_priority_model": "score",
+    "base_outcome_probabilities": {
+      "away_win": 0.6058173179626465,
+      "draw": 0.2108709067106247,
+      "home_win": 0.18331173062324524
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.45697420835494995,
+      "draw": 0.2979145646095276,
+      "home_win": 0.24511125683784485
+    },
+    "score_outcome": "away_win",
+    "home_standing": {
+      "position": 9,
+      "points": 26,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 13,
+      "points": 25,
+      "form": [
+        "D",
+        "W",
+        "L",
+        "L",
+        "W"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.6,
+      "avg_goals_scored": 1.7,
+      "avg_goals_conceded": 1.4,
+      "win_rate": 50,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.1,
+      "avg_goals_scored": 1.3,
+      "avg_goals_conceded": 1.6,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T15:08:41.429015"
+  },
+  "gw19_8": {
+    "home_team": "Liverpool FC",
+    "away_team": "Leeds United FC",
+    "gameweek": 19,
+    "predicted_score": {
+      "home": 3,
+      "away": 2
+    },
+    "outcome_probabilities": {
+      "away_win": 0.057128433138132095,
+      "draw": 0.04619165509939194,
+      "home_win": 0.8966799378395081
+    },
+    "confidence": {
+      "value": 0.72,
+      "percentage": "72.0%",
+      "level": "MEDIUM",
+      "color": "orange",
+      "text": "MEDIUM (72%)"
+    },
+    "agreement": {
+      "aligned": true,
+      "level": "two_agree",
+      "text": "~ Majority consensus"
+    },
+    "prediction_source": "Lineup + Score Agree",
+    "bhakundo_verified": false,
+    "model_used": "lineup",
+    "model_priorities": {
+      "base": {
+        "confidence": 0.43196552991867065,
+        "level": "LOW",
+        "priority": 1
+      },
+      "lineup": {
+        "confidence": 0.7933598756790161,
+        "level": "HIGH",
+        "priority": 2
+      },
+      "score": {
+        "confidence": 0.8,
+        "level": "HIGH",
+        "priority": 3
+      }
+    },
+    "prediction_difficulty": "MODERATE",
+    "prediction_statement": "Majority consensus - Home Win",
+    "top_priority_model": "base",
+    "base_outcome_probabilities": {
+      "away_win": 0.43196552991867065,
+      "draw": 0.2766973376274109,
+      "home_win": 0.29133719205856323
+    },
+    "lineup_outcome_probabilities": {
+      "away_win": 0.11425686627626419,
+      "draw": 0.09238331019878387,
+      "home_win": 0.7933598756790161
+    },
+    "score_outcome": "home_win",
+    "home_standing": {
+      "position": 4,
+      "points": 32,
+      "form": [
+        "D",
+        "D",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    "away_standing": {
+      "position": 16,
+      "points": 20,
+      "form": [
+        "W",
+        "D",
+        "D",
+        "W",
+        "D"
+      ]
+    },
+    "home_stats": {
+      "ppg": 1.7,
+      "avg_goals_scored": 1.6,
+      "avg_goals_conceded": 1.5,
+      "win_rate": 50,
+      "availability": 85
+    },
+    "away_stats": {
+      "ppg": 1.2,
+      "avg_goals_scored": 1.8,
+      "avg_goals_conceded": 1.9,
+      "win_rate": 30,
+      "availability": 85
+    },
+    "timestamp": "2026-01-01T15:08:26.121174"
+  }
+}

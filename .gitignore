@@ -1,0 +1,57 @@
+# ── Python ────────────────────────────────────────────────
+venv/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environment / Secrets ─────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+
+# ── Logs ──────────────────────────────────────────────────
+*.log
+logs/
+training_*.log
+training_log.txt
+training_output.log
+
+# ── Text files (keep requirements files) ──────────────────
+*.txt
+!backend/requirements.txt
+!backend/requirements-minimal.txt
+
+# ── Markdown docs ─────────────────────────────────────────
+*.md
+!README.md
+
+# ── Shell scripts ─────────────────────────────────────────
+*.sh
+
+# ── CatBoost training artifacts ───────────────────────────
+catboost_info/
+**/catboost_info/
+
+# ── Frontend – Next.js ────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
+# ── OS / Editor ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Data / Model files (large binaries) ───────────────────
+required/data/raw/
+required/data/processed/
