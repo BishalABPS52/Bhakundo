@@ -1,308 +1,224 @@
-# Bhakundo - Premier League Match Predictor
 
-A comprehensive Premier League match prediction system using machine learning ensemble models.
+<p align="center">
+  <img src="images/bhakundo.png" alt="Bhakundo Logo" width="200"/>
+</p>
 
-## 📁 Project Structure
+<p align="center">
+  <strong>Bhakundo – Prepare, Predict & Play</strong><br>
+</p>
 
-```
-bhakundo-predictor/
-├── backend/                    # Backend API server
-│   ├── api_server.py          # Main FastAPI application
-│   ├── auth.py                # Authentication
-│   ├── database.py            # Database models
-│   ├── ensemble_predictor.py  # Ensemble prediction logic
-│   ├── football_api.py        # External API integrations
-│   ├── requirements.txt       # Python dependencies
-│   └── .env.example           # Environment configuration template
-│
-├── frontend/                   # Next.js frontend application
-│   ├── pages/                 # Next.js pages
-│   ├── components/            # React components
-│   ├── lib/                   # Utility functions & API client
-│   ├── styles/                # CSS styles
-│   ├── package.json           # Node dependencies
-│   └── .env.local.example     # Frontend env template
-│
-├── required/                   # Shared data, models, and scripts
-│   ├── data/                  # All data files
-│   │   ├── models/            # ML model files (.pkl)
-│   │   │   ├── pl_base_outcome_model.pkl
-│   │   │   ├── pl_lineup_model.pkl
-│   │   │   └── pl_score_prediction_model.pkl
-│   │   ├── raw/               # Raw data files
-│   │   │   └── pl/            # Premier League data
-│   │   │       ├── pl_2023_historical.csv
-│   │   │       ├── pl_2024_historical.csv
-│   │   │       ├── pl_2025_26_completed_matches.csv
-│   │   │       ├── pl_all_seasons_combined.csv
-│   │   │       └── player_data/
-│   │   └── processed/         # Processed features
-│   │       └── pl/
-│   ├── scripts/               # Utility scripts
-│   │   ├── pl_fetch_and_update_all.py       # Main update script
-│   │   ├── pl_build_features_advanced.py     # Feature engineering
-│   │   ├── pl_retrain_all_models_final.py   # Model training
-│   │   └── ...
-│   ├── dashboard/             # Optional dashboard
-│   └── src/                   # Shared source modules
-│
-└── venv/                       # Python virtual environment
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.9+
-- Node.js 18+
-- npm or yarn
-
-### 1. Backend Setup
-
-```bash
-# Navigate to backend folder
-cd backend
-
-# Create and activate virtual environment
-python3 -m venv ../venv
-source ../venv/bin/activate  # Linux/Mac
-# or
-..\venv\Scripts\activate  # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Copy and configure environment
-cp .env.example .env
-# Edit .env with your API keys and configuration
-
-# Run the server
-uvicorn api_server:app --reload --host 0.0.0.0 --port 8000
-```
-
-Backend will be available at `http://localhost:8000`
-
-### 2. Frontend Setup
-
-```bash
-# Navigate to frontend folder
-cd frontend
-
-# Install dependencies
-npm install
-
-# Copy and configure environment
-cp .env.local.example .env.local
-# Edit .env.local if needed
-
-# Run development server
-npm run dev
-```
-
-Frontend will be available at `http://localhost:3000`
-
-## 📊 Data Management
-
-### Current Data Status
-
-- **2023 Season**: ~380 matches (historical)
-- **2024 Season**: ~380 matches (historical)
-- **2025-26 Season**: 196 matches completed (as of GW20)
-- **Total**: ~956 completed matches
-
-### Fetching Latest Data
-
-To update with latest match results and retrain models:
-
-```bash
-# Navigate to required/scripts
-cd required/scripts
-
-# Run the comprehensive update script
-python pl_fetch_and_update_all.py
-```
-
-This script will:
-1. ✅ Fetch latest Premier League 2025-26 matches
-2. ✅ Update player availability data
-3. ✅ Build training features
-4. ✅ Retrain all models
-5. ✅ Show current status
-
-### Check Current Status
-
-```bash
-python pl_fetch_and_update_all.py --status
-```
-
-## 🤖 Models
-
-The system uses 3 core models combined in an ensemble:
-
-1. **Base Outcome Model** (`pl_base_outcome_model.pkl`)
-   - Predicts match outcome (Home/Draw/Away)
-   - Features: team form, standings, H2H history
-
-2. **Lineup Model** (`pl_lineup_model.pkl`)
-   - Adjusts predictions based on player availability
-   - Features: player quality, lineup strength, formations
-
-3. **Score Prediction Model** (`pl_score_prediction_model.pkl`)
-   - Predicts exact scores for both teams
-   - Features: offensive/defensive stats, recent form
-
-4. **Ensemble Predictor** (Combined in `ensemble_predictor.py`)
-   - Aligns all predictions for consistency
-   - Provides confidence scores
-
-## 🌐 URL Fallbacks
-
-### Backend CORS Configuration
-
-The backend accepts requests from (in order):
-1. Custom `FRONTEND_URL` (if set)
-2. https://bhakundo.vercel.app
-3. https://bhakundo-frontend.vercel.app
-4. http://localhost:3000
-
-### Frontend API Configuration
-
-The frontend tries these backend URLs (in order):
-1. Custom `NEXT_PUBLIC_API_URL` (if set)
-2. https://bhakundo-backend1.onrender.com
-3. https://bhakundo-backend.onrender.com
-4. http://localhost:8000
-
-This ensures the app works in both **production** and **local development**.
-
-## 📋 API Endpoints
-
-### Public Endpoints
-
-- `GET /` - API information
-- `GET /health` - Health check
-- `POST /predict` - Get match prediction
-- `GET /predictions/history` - View prediction history
-
-### Protected Endpoints (require API key)
-
-- `POST /admin/retrain` - Retrain models
-- `GET /admin/stats` - System statistics
-
-## 🔄 Workflow
-
-### After Each Gameweek
-
-1. **Update Data**:
-   ```bash
-   cd required/scripts
-   python pl_fetch_and_update_all.py
-   ```
-
-2. **Verify Models**: Models are automatically retrained by the update script
-
-3. **Test Predictions**:
-   ```bash
-   # Backend should auto-reload if running with --reload
-   # Frontend should hot-reload automatically
-   ```
-
-### Making Predictions
-
-The ensemble predictor combines all models to provide:
-- Match outcome probability (H/D/A)
-- Most likely score
-- Confidence level
-- Key factors (form, lineups, H2H)
-
-## 🛠️ Development
-
-### Adding New Features
-
-1. Update feature engineering in `required/scripts/pl_build_features_advanced.py`
-2. Retrain models with `pl_retrain_all_models_final.py`
-3. Update API if needed
-
-### Supporting New Leagues
-
-The structure is organized to support multiple leagues:
-
-```
-required/data/raw/
-├── pl/           # Premier League
-└── laliga/       # La Liga (future)
-```
-
-Just add league-specific data in new folders.
-
-## 📝 Files Organization
-
-### CSV Files (in `required/data/raw/pl/`)
-
-- `pl_2023_historical.csv` - 2023 season data
-- `pl_2024_historical.csv` - 2024 season data
-- `pl_2025_26_completed_matches.csv` - Current season matches
-- `pl_all_seasons_combined.csv` - All seasons combined for training
-
-### Model Files (in `required/data/models/`)
-
-- `pl_base_outcome_model.pkl` - Base prediction model
-- `pl_lineup_model.pkl` - Lineup adjustment model
-- `pl_score_prediction_model.pkl` - Score prediction model
-
-## 🚢 Deployment
-
-### Backend (Render/Heroku)
-
-1. Push backend folder to Git
-2. Configure environment variables
-3. Deploy as Web Service
-4. Set start command: `uvicorn api_server:app --host 0.0.0.0 --port $PORT`
-
-### Frontend (Vercel/Netlify)
-
-1. Push frontend folder to Git
-2. Connect to Vercel/Netlify
-3. Configure environment variables
-4. Auto-deploy on push
-
-## 📊 Viewing Latest Matches (GW29 Info)
-
-To see the latest completed matches and GW29 fixtures:
-
-```bash
-cd required/data/raw/pl
-head -1 pl_all_seasons_combined.csv  # Headers
-grep "2025-26,29" pl_all_seasons_combined.csv  # GW29 matches
-grep "2025-26.*FINISHED" pl_all_seasons_combined.csv | tail -20  # Latest completed
-```
-
-## ⚡ Performance
-
-- **Prediction Time**: < 100ms
-- **Model Size**: ~3.8 MB total
-- **API Response**: < 200ms average
-
-## 🔐 Security
-
-- API key authentication for admin endpoints
-- CORS properly configured
-- Environment variables for sensitive data
-- SQLite for local, PostgreSQL for production
-
-## 📞 Support
-
-For issues or questions:
-- Check logs in `required/data/logs/`
-- Review model training output
-- Test API endpoints with `/health`
-
-## 📜 License
-
-Proprietary - Bishal Shrestha
+<p align="center">
+  Live at: <a href="https://bhakundo.vercel.app">https://bhakundo.vercel.app</a>
+</p>
 
 ---
 
-**Last Updated**: March 8, 2026  
-**Current Season**: 2025-26  
-**Latest Gameweek**: GW20 (196 matches completed)
+## About
+
+Bhakundo is a Football match prediction platform powered by a 3-model machine learning ensemble. It gives football fans a single place to view live fixtures, standings, and get predictions for upcoming matches with predicted scorelines, win probabilities.
+
+---
+
+## Screenshots
+
+### Landing Page
+![Landing Page](images/landingpage.png)
+
+### Predictor
+![Predictor](images/predictor.png)
+
+### Fixtures & Results
+![Fixtures](images/fixtures.png)
+
+### Standings
+![Standings](images/standings.png)
+
+---
+
+## Key Features
+
+### For Football Enthsiasts
+- Get match predictions with win/draw/loss probabilities
+- View expected scorelines aligned to outcome predictions
+- Browse live Football fixtures and results by gameweek
+- View the current Premier League standings table
+
+### Prediction Engine
+- **Base Model** — CatBoost classifier trained on 133 features 
+- **Score Model** — LightGBM + XGBoost blend predicting home and away goals via Poisson regression
+- **Lineup Model** — CatBoost classifier with formation perturbation augmentation
+- **Ensemble Logic** — BHAKUNDO priority system: Base + Lineup agreement triggers highest-confidence predictions; full disagreement falls back to formation-weighted priority
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Hosted On |
+|---|---|---|
+| Frontend | <img src="https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black" height="30"> <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white" height="30"> <img src="https://img.shields.io/badge/TailwindCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" height="30"> | <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" height="30"> |
+| Backend | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" height="30"> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" height="30"> | <img src="https://img.shields.io/badge/Render-%2346E3B7.svg?style=for-the-badge&logo=render&logoColor=white" height="30"> |
+| Database | <img src="https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" height="30"> | <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=black" height="30"> |
+| ML Models | <img src="https://img.shields.io/badge/CatBoost-FFD700?style=for-the-badge&logo=yandex&logoColor=black" height="30"> <img src="https://img.shields.io/badge/XGBoost-EC6C00?style=for-the-badge&logo=xgboost&logoColor=white" height="30"> <img src="https://img.shields.io/badge/LightGBM-00B050?style=for-the-badge&logo=microsoft&logoColor=white" height="30"> | — |
+| Live Data | <img src="https://img.shields.io/badge/FPL%20API-38003C?style=for-the-badge&logo=premierleague&logoColor=white" height="30"> <img src="https://img.shields.io/badge/Football--Data.org-004C97?style=for-the-badge&logo=football&logoColor=white" height="30"> | — |
+
+---
+
+## Project Structure
+
+```
+bishalabps52-bhakundo/
+├── backend/
+│   ├── api_server.py            # Main FastAPI app — all endpoints
+│   ├── ensemble_predictor.py    # BHAKUNDO priority ensemble logic
+│   ├── model_classes.py         
+│   ├── poisson_score_predictor.py  # Poisson score probability calculator
+│   ├── football_api.py          # FPL + Football-Data.org API integration
+│   ├── database.py              # SQLAlchemy models (Prediction, Actual)
+│   ├── auth.py                  # API key + admin auth middleware
+│   ├── requirements.txt
+│   ├── render.yaml
+│   └── scripts/
+│       ├── pl_retrain_all_models_final.py  # Full training pipeline
+│       ├── fetch_newgw.py                  # Fetch new GW results + retrain
+│       ├── comprehensive_feature_engineering.py  # 125+ features builder
+│       └── train_score_model_ensemble.py   # Score model training
+├── frontend/
+│   └── src/
+│       ├── pages/               # index, predictor, fixtures, standings
+│       ├── components/          # Navbar, Footer, FixturesPL, StandingsPL
+│       ├── lib/                 # API config and fetcher
+│       └── styles/
+└── required/
+    └── data/
+        └── models/              # Trained .pkl model files
+```
+
+---
+
+## Prediction Engine — How It Works
+
+```mermaid
+flowchart TD
+    A[Upcoming Match] --> B[Feature Engineering: 125+ Features]
+    B --> C[Base Model: CatBoost + Platt Scaling]
+    B --> D[Score Model: LightGBM + XGBoost Blend]
+    B --> E[Lineup Model: CatBoost + Formation Augment]
+
+    C --> F{BHAKUNDO\nEnsemble Logic}
+    D --> F
+    E --> F
+
+    F --> G{Agreement Check}
+
+    G -->|All 3 Agree| H[Highest Confidence: All Models Agree]
+    G -->|Base + Lineup Agree| I[ BHAKUNDO PREDICTS: High Confidence]
+    G -->|2 of 3 Agree| J[Majority Consensus :Medium Confidence]
+    G -->|All Disagree| K{Custom Formation?}
+
+    K -->|Yes| L[Lineup Priority: Edited Formation]
+    K -->|No| M[Base Priority; Default Formation]
+
+    H --> N[Final Prediction]
+    I --> N
+    J --> N
+    L --> N
+    M --> N
+
+    N --> O[Score Alignment; Score Must Match Outcome]
+    O --> P[Output: Outcome + Score+ Probabilities + Confidence]
+
+    style A fill:#38003C,color:#fff,stroke:none
+    style B fill:#1E40AF,color:#fff,stroke:none
+    style C fill:#065F46,color:#fff,stroke:none
+    style D fill:#065F46,color:#fff,stroke:none
+    style E fill:#065F46,color:#fff,stroke:none
+    style F fill:#7C3AED,color:#fff,stroke:none
+    style G fill:#1F2937,color:#fff,stroke:none
+    style H fill:#047857,color:#fff,stroke:none
+    style I fill:#B45309,color:#fff,stroke:none
+    style J fill:#0E7490,color:#fff,stroke:none
+    style K fill:#1F2937,color:#fff,stroke:none
+    style L fill:#9D174D,color:#fff,stroke:none
+    style M fill:#1E3A8A,color:#fff,stroke:none
+    style N fill:#4F46E5,color:#fff,stroke:none
+    style O fill:#374151,color:#fff,stroke:none
+    style P fill:#38003C,color:#fff,stroke:none
+```
+
+---
+
+## Model Details
+
+**Training data:** 1000+ finished Premier League matches (2023–2026)  
+**Feature highlights:**  Venue stats, H2H, xG, Player Form, Home Form , Away Form , Goal For , Goal Against and many more
+
+---
+
+## Live Data Sources
+
+- **Fantasy Premier League API** — fixtures, gameweek, team names (free, no auth)
+- **Football-Data.org API** — match results, standings, live scores
+- **Fallback** — formatted 2025-26 season CSV loaded from disk if APIs are unavailable
+
+---
+
+## Coming Soon
+
+- User accounts with prediction history and accuracy tracking
+- Prediction leaderboard across gameweeks
+- La Liga, Bundesliga, UEFA Champions League and other football leagues support
+- Automated retraining after each gameweek 
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Python 3.11+
+- PostgreSQL
+
+### Installation
+
+#### Clone the repo
+```bash
+git clone https://github.com/BishalABPS52/bhakundo.git
+```
+
+#### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Runs on http://localhost:3000
+
+#### Backend
+```bash
+cd backend
+pip install --upgrade pip
+pip install -r requirements.txt
+uvicorn backend.api_server:app --reload --port 8000
+```
+Runs on http://localhost:8000
+
+#### Environment Variables
+
+Copy `.env.example` to `.env` and fill in:
+
+```
+DATABASE_URL=postgresql://...
+FOOTBALL_API_KEY=your_football_data_api_key
+FRONTEND_API_KEY=your_frontend_api_key
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=your_password
+```
+
+---
+
+## Developer
+
+### Built by [Bishal Shrestha](https://bishalshrestha52.com.np)
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BishalABPS52)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishal-shrestha-2b05b1302/)
