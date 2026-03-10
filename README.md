@@ -33,6 +33,9 @@ Bhakundo is a Football match prediction platform powered by a 3-model machine le
 ### Standings
 ![Standings](images/standings.png)
 
+### Help
+![Help](images/help.png)
+
 ---
 
 ## Key Features
