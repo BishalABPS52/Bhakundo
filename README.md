@@ -156,7 +156,7 @@ flowchart TD
 
 ## Live Data Sources
 
-- **Fantasy Premier League API** — fixtures, gameweek, team names (free, no auth)
+- **Fantasy Premier League API** — fixtures, gameweek, team names 
 - **Football-Data.org API** — match results, standings, live scores
 - **Fallback** — formatted 2025-26 season CSV loaded from disk if APIs are unavailable
 
