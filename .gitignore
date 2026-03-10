@@ -52,6 +52,4 @@ Thumbs.db
 .idea/
 .vscode/
 
-# ── Data / Model files (large binaries) ───────────────────
-required/data/raw/
-required/data/processed/
+

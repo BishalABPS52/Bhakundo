@@ -1,0 +1,490 @@
+fpl_id,player_name,full_name,team_code,status,news,chance_of_playing_next_round
+3,Hein,Karl Hein,3,u,Has joined Werder Bremen on loan for the rest of the season.,0.0
+5,Gabriel,Gabriel dos Santos Magalhães,3,d,Thigh injury - 25% chance of playing,25.0
+6,Saliba,William Saliba,3,a,,100.0
+7,Calafiori,Riccardo Calafiori,3,a,,100.0
+8,J.Timber,Jurriën Timber,3,a,,100.0
+9,Kiwior,Jakub Kiwior,3,u,has joined Porto on loan for the rest of the season.,0.0
+11,White,Benjamin White,3,i,Hamstring injury - Expected back 03 Jan,0.0
+14,Kacurri,Maldini Kacurri,3,u,has joined Morecambe on loan for the rest of the season.,0.0
+16,Saka,Bukayo Saka,3,a,,100.0
+17,Ødegaard,Martin Ødegaard,3,a,,100.0
+18,Madueke,Noni Madueke,3,a,,100.0
+19,Martinelli,Gabriel Martinelli Silva,3,d,Knock - 75% chance of playing,75.0
+20,Trossard,Leandro Trossard,3,a,,100.0
+21,Rice,Declan Rice,3,a,,100.0
+23,Fábio Vieira,Fábio Ferreira Vieira,3,u,has joined Hamburger on loan for the rest of the season.,0.0
+24,Nørgaard,Christian Nørgaard,3,a,,100.0
+26,Zubimendi,Martín Zubimendi Ibáñez,3,a,,100.0
+28,Kabia,Ismeal Kabia,3,u,has joined Shrewsbury Town on loan for the rest of the season.,0.0
+29,Sambi,Albert Sambi Lokonga,3,u,has joined Hamburger permanently.,0.0
+30,Havertz,Kai Havertz,3,d,Knee injury - 25% chance of playing,25.0
+31,G.Jesus,Gabriel Fernando de Jesus,3,a,,100.0
+662,Mosquera,Cristhian Mosquera,3,i,Ankle injury - Unknown return date,0.0
+666,Gyökeres,Viktor Gyökeres,3,a,,100.0
+700,Dowman,Max Dowman,3,i,Ankle injury - Unknown return date,0.0
+725,Hincapie,Piero Hincapié,3,d,Knock - 75% chance of playing,75.0
+32,Martinez,Emiliano Martínez Romero,7,a,,100.0
+34,Gauci,Joe Gauci,7,u,Has joined Port Vale on loan for the rest of the season.,0.0
+35,Marschall,Filip Marschall,7,u,Has joined Stevenage permanently.,0.0
+36,Cash,Matty Cash,7,a,,100.0
+37,Digne,Lucas Digne,7,a,,100.0
+38,Konsa,Ezri Konsa Ngoyo,7,a,,100.0
+40,Mings,Tyrone Mings,7,i,Hamstring injury - Expected back 30 Dec,0.0
+41,Pau,Pau Torres,7,i,Calf injury - Expected back 30 Dec,0.0
+42,A.García,Andrés García,7,a,,100.0
+43,Alex Moreno,Álex Moreno Lopera,7,u,Has joined Girona permanently.,0.0
+44,Bogarde,Lamare Bogarde,7,a,,100.0
+46,Yasin,Yasin Özcan,7,u,has joined Anderlecht on loan for the rest of the season.,0.0
+47,Rogers,Morgan Rogers,7,a,,100.0
+48,Tielemans,Youri Tielemans,7,a,,100.0
+49,Bailey,Leon Bailey,7,u,Has joined AS Roma on loan for the rest of the season.,0.0
+50,Buendía,Emiliano Buendía Stati,7,a,,100.0
+51,Iling Jr,Samuel Iling-Junior,7,u,has joined West Bromwich Albion on loan for the rest of the season,0.0
+55,Barkley,Ross Barkley,7,i,Knee injury - Expected back 07 Feb,0.0
+56,Barrenechea,Enzo Barrenechea,7,u,Season-long loan to Benfica,0.0
+57,Dobbin,Lewis Dobbin,7,u,Has joined Preston North End on loan for the rest of the season.,0.0
+58,Kamara,Boubacar Kamara,7,a,,100.0
+59,Onana,Amadou Onana,7,a,,100.0
+61,Dendoncker,Leander Dendoncker,7,u,Has joined Real Oviedo permanently.,0.0
+64,Watkins,Ollie Watkins,7,a,,100.0
+65,Redmond,Zépiqueno Redmond,7,u,has joined Huddersfield Town on loan for the rest of the season.,0.0
+389,Elliott,Harvey Elliott,7,d,Illness - 75% chance of playing,75.0
+456,Sancho,Jadon Sancho,7,a,,100.0
+677,Guessand,Evann Guessand,7,n,On international duty at the Africa Cup of Nations from Gameweek 18 onwards. - Unknown return date,0.0
+701,Rowe,Triston Rowe,7,u,has joined Annecy on loan for the rest of the season.,0.0
+719,Lindelöf,Victor Lindelöf,7,a,,100.0
+184,Green,Etienne Green,90,u,has joined FC Fredericia permanently.,0.0
+186,Roberts,Connor Roberts,90,i,Achilles injury - Unknown return date,0.0
+187,Walker,Kyle Walker,90,a,,100.0
+189,Dodgson,Owen Dodgson,90,u,Has joined Stockport County on loan for the rest of the season.,0.0
+191,Estève,Maxime Estève,90,d,Knock - 75% chance of playing,75.0
+193,Humphreys,Bashir Humphreys,90,a,,100.0
+194,Jordan,Jordan Beyer,90,i,Hamstring injury - Unknown return date,0.0
+195,Lucas Pires,Lucas Pires Silva,90,a,,100.0
+196,Sambo,Shurandy Sambo,90,u,Has joined Sparta Rotterdam on loan for the rest of the season.,0.0
+198,Tuanzebe,Axel Tuanzebe,90,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+200,Anthony,Jaidon Anthony,90,a,,100.0
+201,Benson,Manuel Benson Hedilazio,90,u,has joined Swansea City on loan for the rest of the season.,0.0
+202,Bruun Larsen,Jacob Bruun Larsen,90,a,,100.0
+204,Churlinov,Darko Churlinov,90,u,has joined Kocaelispor  permanently.,0.0
+207,Hannibal,Hannibal Mejbri,90,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+208,Koleosho,Luca Koleosho,90,u,Has joined Espanyol on loan for the rest of the season.,0.0
+211,A.Ramsey,Aaron Ramsey,90,u,has joined Leicester City on loan for the rest of the season.,0.0
+212,Adewumi,Oluwaseun Adewumi,90,u,Has joined Cercle Brugge on loan for the rest of the season.,0.0
+216,Amdouni,Zeki Amdouni,90,i,Knee injury - Expected back 25 Apr,0.0
+217,Foster,Lyle Foster,90,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+219,Obafemi,Michael Obafemi,90,u,has joined VfL Bochum  on loan for the rest of the season.,0.0
+470,Dúbravka,Martin Dúbravka,90,a,,100.0
+676,Ugochukwu,Lesley Ugochukwu,90,a,,100.0
+680,Broja,Armando Broja,90,a,,100.0
+66,Neto,Norberto Murara Neto,91,u,Has joined Botafogo permanently.,0.0
+70,Paulsen,Alex Paulsen,91,u,Has joined Lechia Gdansk on loan for the rest of the season.,0.0
+71,Zabarnyi,Illia Zabarnyi,91,u,Has joined Paris Saint-Germain permanently.,0.0
+72,Senesi,Marcos Senesi Barón,91,a,,100.0
+73,Smith,Adam Smith,91,a,,100.0
+75,Akinmboni,Matai Akinmboni,91,d,Muscle injury - 25% chance of playing,25.0
+78,J.Araujo,Julián Araujo Zúñiga,91,a,,100.0
+79,Mepham,Chris Mepham,91,u,has joined West Bromwich Albion permanently.,0.0
+80,Soler,Julio Soler Barreto,91,a,,100.0
+81,Kluivert,Justin Kluivert,91,a,,100.0
+82,Semenyo,Antoine Semenyo,91,a,,100.0
+85,Adams,Tyler Adams,91,i,Knee injury - Expected back 21 Feb,0.0
+86,Brooks,David Brooks,91,a,,100.0
+87,Christie,Ryan Christie,91,a,,100.0
+88,Cook,Lewis Cook,91,a,,100.0
+89,Philip,Philip Billing,91,u,Has joined Midtjylland permanently.,0.0
+91,Sinisterra,Luis Sinisterra Lucumí,91,u,Has joined Cruzeiro on loan for the rest of the season.,0.0
+92,Faivre,Romain Faivre,91,u,has joined Al Taawoun permanently.,0.0
+93,H.Traorè,Hamed Traorè,91,u,has joined Marseille on loan for the rest of the season.,0.0
+94,Sadi,Dominic Sadi,91,u,has joined Novi Pazar on loan for the rest of the season.,0.0
+95,Silcott-Duberry,Zain Silcott-Duberry,91,u,has joined Olympiakos permanently.,0.0
+96,Winterburn,Ben Winterburn,91,u,has joined Barnet on loan for the rest of the season.,0.0
+97,Evanilson,Francisco Evanilson de Lima Barbosa,91,a,,100.0
+98,Enes Ünal,Enes Ünal,91,a,,100.0
+99,Adu-Adjei,Daniel Adu-Adjei,91,u,has joined HNK Rijeka permanently.,0.0
+391,Gannon-Doak,Ben Gannon-Doak,91,i,Hamstring injury - Unknown return date,0.0
+685,Diakité,Bafodé Diakité,91,a,,100.0
+721,Milosavljević,Veljko Milosavljevic,91,i,Knee injury - Expected back 21 Feb,0.0
+27,Nelson,Reiss Nelson,94,a,,100.0
+83,O.Dango,Dango Ouattara,94,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+101,Kelleher,Caoimhín Kelleher,94,a,,100.0
+108,Ajer,Kristoffer Ajer,94,a,,100.0
+111,Pinnock,Ethan Pinnock,94,a,,100.0
+112,Roerslev,Mads Roerslev Rasmussen,94,u,Has joined Southampton permanently.,0.0
+114,Arthur,Benjamin Arthur,94,a,,100.0
+115,Fredrick,Benjamin Fredrick,94,u,has joined Dender on loan for the rest of the season.,0.0
+116,Hickey,Aaron Hickey,94,a,,100.0
+117,Ji-soo,Kim Ji-soo,94,u,has joined Kaiserslautern on loan for the rest of the season.,0.0
+118,Meghoma,Jayden Meghoma,94,u,Has joined Rangers on loan for the rest of the season.,0.0
+120,Schade,Kevin Schade,94,a,,100.0
+122,Milambo,Antoni Milambo,94,i,Knee injury - Expected back 01 Jun,0.0
+123,Carvalho,Fábio Freitas Gouveia Carvalho,94,i,Knee injury - Expected back 01 Jun,0.0
+124,Henderson,Jordan Henderson,94,a,,100.0
+125,Janelt,Vitaly Janelt,94,a,,100.0
+127,Nunes,Gustavo Nunes Fernandes Gomes,94,a,,100.0
+128,Onyeka,Frank Onyeka,94,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+129,Yarmoliuk,Yehor Yarmoliuk,94,a,,100.0
+132,Maghoma,Paris Maghoma,94,a,,100.0
+134,Trevitt,Ryan Trevitt,94,u,Has joined Wigan on loan for the rest of the season,0.0
+136,Thiago,Igor Thiago Nascimento Rodrigues,94,a,,100.0
+748,Dasilva,Josh Dasilva,94,i,Knee injury - Expected back 01 Jan,0.0
+141,Rushworth,Carl Rushworth,36,u,Has joined Coventry City on loan for the rest of the season.,0.0
+142,Scherpen,Kjell Scherpen,36,u,Has joined Union SG permanently,0.0
+145,De Cuyper,Maxim De Cuyper,36,a,,100.0
+146,Dunk,Lewis Dunk,36,a,,100.0
+147,Estupiñan,Pervis Estupiñán Tenorio,36,u,Has joined AC Milan permanently,0.0
+150,Lamptey,Tariq Lamptey,36,u,has joined Fiorentina permanently.,0.0
+151,Van Hecke,Jan Paul van Hecke,36,d,Illness - 75% chance of playing,75.0
+152,Veltman,Joël Veltman,36,a,,100.0
+153,Webster,Adam Webster,36,i,Knee injury - Unknown return date,0.0
+154,Cashin,Eiran Cashin,36,u,Has joined Birmingham on loan for the rest of the season.,0.0
+155,Slater,Jacob Slater,36,u,has joined Harrogate Town on loan until January.,0.0
+157,Mitoma,Mitoma Kaoru,36,a,,100.0
+158,Georginio,Georginio Rutter,36,a,,100.0
+159,March,Solly March,36,i,Knee injury - Expected back 03 Jan,0.0
+161,Enciso,Julio Enciso Espínola,36,u,has joined Strasbourg permanently.,0.0
+162,Gruda,Brajan Gruda,36,a,,100.0
+163,Hinshelwood,Jack Hinshelwood,36,a,,100.0
+164,O'Riley,Matt O'Riley,36,u,has joined Marseille on loan for the rest of the season.,0.0
+165,Sima,Abdallah Sima,36,u,has joined Lens permanently.,0.0
+166,Ayari,Yasin Ayari,36,a,,100.0
+167,Baleba,Carlos Baleba,36,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+169,Gomez,Diego Gómez Amarilla,36,a,,100.0
+170,Milner,James Milner,36,a,,100.0
+171,Sarmiento,Jeremy Sarmiento Morante,36,u,has joined Cremonese on loan for the rest of the season.,0.0
+172,Watson,Tom Watson,36,a,,100.0
+173,Wieffer,Mats Wieffer,36,d,Knock - 75% chance of playing,75.0
+174,Yalcouye,Malick Yalcouyé,36,u,Has joined Swansea City on loan for the rest of the season.,0.0
+176,Mazilu,Adrian Mazilu,36,u,has joined Dinamo Bucharest permanently.,0.0
+177,Moran,Andrew Moran,36,u,Has joined Los Angeles FC on loan for the rest of the season.,0.0
+178,Welbeck,Danny Welbeck,36,d,Back injury - 75% chance of playing,75.0
+179,Ferguson,Evan Ferguson,36,u,Has joined AS Roma on loan for the rest of the season,0.0
+180,Tzimas,Stefanos Tzimas,36,i,Knee injury - Expected back 01 Jun,0.0
+168,Buonanotte,Facundo Buonanotte,8,a,,100.0
+222,Penders,Mike Penders,8,u,Has joined RC Strasbourg on loan for the rest of the season.,0.0
+225,James,Reece James,8,a,,100.0
+226,Chalobah,Trevoh Chalobah,8,a,,100.0
+227,Colwill,Levi Samuels Colwill,8,i,Anterior cruciate ligament - Unknown return date,0.0
+228,Gusto,Malo Gusto,8,a,,100.0
+229,B.Badiashile,Benoît Badiashile Mukinayi,8,a,,100.0
+230,Fofana,Wesley Fofana,8,a,,100.0
+231,M.Sarr,Mamadou Sarr,8,u,Has joined RC Strasbourg on loan for the rest of the season.,0.0
+232,Tosin,Tosin Adarabioyo,8,a,,100.0
+233,Acheampong,Josh Acheampong,8,a,,100.0
+234,Anselmino,Aarón Anselmino,8,u,has joined Borussia Dortmund on loan for the rest of the season.,0.0
+235,Palmer,Cole Palmer,8,a,,100.0
+236,Neto,Pedro Lomba Neto,8,a,,100.0
+237,Enzo,Enzo Fernández,8,a,,100.0
+238,Estêvão,Estêvão Almeida de Oliveira Gonçalves,8,a,,100.0
+240,Nkunku,Christopher Nkunku,8,u,has joined AC Milan permanently.,0.0
+241,Caicedo,Moisés Caicedo Corozo,8,a,,100.0
+244,Lavia,Roméo Lavia,8,i,Thigh injury - Unknown return date,0.0
+245,Mudryk,Mykhailo Mudryk,8,s,Suspended - unknown return date,0.0
+246,Andrey Santos,Andrey Nascimento dos Santos,8,a,,100.0
+247,D.Essugo,Dário Luís Essugo,8,i,Thigh injury - Unknown return date,0.0
+248,Paez,Kendry Páez Andrade,8,u,Has joined RC Strasbourg on loan for the rest of the season.,0.0
+250,Delap,Liam Delap,8,a,,100.0
+251,N.Jackson,Nicolas Jackson,8,u,has joined Bayern Munich on loan for the rest of the season.,0.0
+252,Marc Guiu,Marc Guiu Paz,8,a,,100.0
+254,Benitez,Walter Benítez,31,a,,100.0
+256,Muñoz,Daniel Muñoz Mejía,31,i,Knee injury - Expected back 17 Jan,0.0
+259,Sosa,Borna Sosa,31,a,,100.0
+260,Guéhi,Marc Guéhi,31,a,,100.0
+261,Richards,Chris Richards,31,d,Foot injury - 50% chance of playing,50.0
+262,Chadi Riad,Chadi Riad Dnanou,31,d,Lack of match fitness - 25% chance of playing,25.0
+264,Holding,Rob Holding,31,u,Has joined Colorado Rapids permanently.,0.0
+265,Kporha,Caleb Kporha,31,i,Back injury - Unknown return date,0.0
+267,Sarr,Ismaïla Sarr,31,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+268,Doucouré,Cheick Doucouré,31,i,Knee injury - Unknown return date,0.0
+270,Hughes,Will Hughes,31,a,,100.0
+271,Kamada,Daichi Kamada,31,i,Hamstring injury - Expected back 21 Feb,0.0
+273,Wharton,Adam Wharton,31,a,,100.0
+276,Devenny,Justin Devenny,31,a,,100.0
+277,Ebiowei,Malcolm Ebiowei,31,u,Has joined Blackpool permanently.,0.0
+278,J.Rak-Sakyi,Jesurun Rak-Sakyi,31,u,has joined Caykur Rizespor on loan for the rest of the season.,0.0
+279,M.França,Matheus França de Oliveira,31,u,Has joined CR Vasco da Gama on loan for the rest of the season.,0.0
+280,Ozoh,David Ozoh,31,u,Has joined Derby County on loan for the rest of the season.,0.0
+282,Umeh,Franco Umeh-Chibueze,31,u,has joined Portsmouth permanently.,0.0
+283,Mateta,Jean-Philippe Mateta,31,a,,100.0
+284,Nketiah,Eddie Nketiah,31,d,Knock - 75% chance of playing,75.0
+285,Édouard,Odsonne Édouard,31,u,has joined RC Lens permanently.,0.0
+690,Cardines,Rio Cardines,31,i,Groin Injury - Expected back 25 Jan,0.0
+712,Yeremy,Yéremy Pino Santos,31,a,,100.0
+723,Canvot,Jaydee Canvot,31,a,,100.0
+242,Dewsbury-Hall,Kiernan Dewsbury-Hall,11,d,Hamstring injury - 25% chance of playing,25.0
+290,Branthwaite,Jarrad Branthwaite,11,i,Hamstring injury - Expected back 18 Jan,0.0
+292,Mykolenko,Vitalii Mykolenko,11,a,,100.0
+294,Coleman,Séamus Coleman,11,i,Hamstring injury - Unknown return date,0.0
+295,Keane,Michael Keane,11,a,,100.0
+296,Patterson,Nathan Patterson,11,a,,100.0
+299,Ndiaye,Iliman Ndiaye,11,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+302,Gana,Idrissa Gana Gueye,11,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+304,Iroegbunam,Tim Iroegbunam,11,a,,100.0
+305,Armstrong,Harrison Armstrong,11,u,has joined Preston North End on loan for the rest of the season.,0.0
+308,Heath,Isaac Heath,11,u,has joined Accrington on loan for the rest of the season.,0.0
+309,Metcalfe,Jenson Metcalfe,11,u,Has joined Bradford City permanently.,0.0
+312,Y.Chermiti,Youssef Ramalho Chermiti,11,u,has joined Rangers permanently.,0.0
+313,Sherif,Martin Sherif,11,u,has joined Rotherham United on loan for the rest of the season.,0.0
+419,Grealish,Jack Grealish,11,a,,100.0
+667,Aznou,Adam Aznou,11,a,,100.0
+704,Onyango,Tyler Onyango,11,u,has joined Stockport County on loan for the rest of the season.,0.0
+728,Röhl,Merlin Röhl,11,a,,100.0
+315,Benda,Steven Benda,54,u,Has joined Millwall on loan for the rest of the season.,0.0
+316,Robinson,Antonee Robinson,54,a,,100.0
+317,Andersen,Joachim Andersen,54,a,,100.0
+318,Bassey,Calvin Bassey,54,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+322,Tete,Kenny Tete,54,a,,100.0
+324,Iwobi,Alex Iwobi,54,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+325,Smith Rowe,Emile Smith Rowe,54,a,,100.0
+327,Andreas,Andreas Hoelgebaum Pereira,54,u,has joined Palmeiras permanently.,0.0
+328,Sessegnon,Ryan Sessegnon,54,i,Hamstring injury - Unknown return date,0.0
+329,Wilson,Harry Wilson,54,d,Knock - 75% chance of playing,75.0
+331,Cairney,Tom Cairney,54,a,,100.0
+332,Lukić,Saša Lukić,54,a,,100.0
+333,Godo,Martial Godo,54,u,has joined Strasbourg permanently.,0.0
+334,Harris,Luke Harris,54,u,Has joined Oxford United on loan for the rest of the season.,0.0
+337,Raúl,Raúl Jiménez Rodríguez,54,a,,100.0
+338,Muniz,Rodrigo Muniz Carvalho,54,i,Hamstring injury - Expected back 01 Jan,0.0
+727,Chukwueze,Samuel Chukwueze,54,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+731,Kevin,Kevin Santos Lopes de Macedo,54,a,,100.0
+342,Bogle,Jayden Bogle,2,a,,100.0
+343,Struijk,Pascal Struijk,2,a,,100.0
+344,Bijol,Jaka Bijol,2,a,,100.0
+345,Bornauw,Sebastiaan Bornauw,2,a,,100.0
+347,Gudmundsson,Gabriel Gudmundsson,2,a,,100.0
+348,Rodon,Joe Rodon,2,a,,100.0
+349,Schmidt,Isaac Schmidt,2,u,has joined Werder Bremen on loan for the rest of the season.,0.0
+351,Gnonto,Wilfried Gnonto,2,a,,100.0
+352,Harrison,Jack Harrison,2,a,,100.0
+353,James,Daniel James,2,i,Hamstring injury - Expected back 07 Feb,0.0
+354,Ampadu,Ethan Ampadu,2,a,,100.0
+355,Greenwood,Sam Greenwood,2,u,has joined Pogon Szczecin permanently.,0.0
+357,Ramazani,Largie Ramazani,2,u,has joined Valencia on loan for the rest of the season.,0.0
+358,Tanaka,Tanaka Ao,2,a,,100.0
+359,Crew,Charlie Crew,2,u,Has joined Doncaster Rovers on loan for the rest of the season.,0.0
+360,Gelhardt,Joe Gelhardt,2,u,Has joined Hull City on loan for the rest of the season.,0.0
+361,Gyabi,Darko Gyabi,2,u,has joined Hull City permanently.,0.0
+362,Piroe,Joël Piroe,2,a,,100.0
+363,Bamford,Patrick Bamford,2,u,has departed the club as a free agent.,0.0
+364,Mateo Joseph,Mateo Joseph Fernández-Regatillo,2,u,Has joined RCD Mallorca on loan for the rest of the season.,0.0
+365,Nmecha,Lukas Nmecha,2,d,Hamstring injury - 25% chance of playing,25.0
+493,Longstaff,Sean Longstaff,2,i,Calf injury - Expected back 07 Jan,0.0
+660,Stach,Anton Stach,2,a,,100.0
+665,Perri,Lucas Estella Perri,2,a,,100.0
+691,Calvert-Lewin,Dominic Calvert-Lewin,2,a,,100.0
+698,Okafor,Noah Okafor,2,a,,100.0
+741,Gray,Harry Gray,2,a,,100.0
+366,A.Becker,Alisson Becker,14,a,,100.0
+370,Frimpong,Jeremie Frimpong,14,a,,100.0
+374,Konaté,Ibrahima Konaté,14,a,,100.0
+375,Bradley,Conor Bradley,14,d,Knock - 50% chance of playing,50.0
+376,Gomez,Joe Gomez,14,i,Muscle injury - Unknown return date,0.0
+377,Tsimikas,Konstantinos Tsimikas,14,u,has joined AS Roma on loan for the rest of the season.,0.0
+378,Nallo,Amara Nallo,14,a,,100.0
+381,M.Salah,Mohamed Salah,14,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+382,Wirtz,Florian Wirtz,14,a,,100.0
+383,Luis Díaz,Luis Díaz Marulanda,14,u,Has joined Bayern Munch permanently.,0.0
+384,Gakpo,Cody Gakpo,14,d,Muscle injury - 50% chance of playing,50.0
+385,Chiesa,Federico Chiesa,14,a,,100.0
+386,Mac Allister,Alexis Mac Allister,14,a,,100.0
+387,Szoboszlai,Dominik Szoboszlai,14,s,Suspended until 01 Jan,0.0
+388,C.Jones,Curtis Jones,14,a,,100.0
+390,Gravenberch,Ryan Gravenberch,14,a,,100.0
+392,Endo,Endo Wataru,14,i,Ankle injury - Unknown return date,0.0
+393,Bajcetic,Stefan Bajčetić Maquieira,14,i,Hamstring injury - Unknown return date,0.0
+394,McConnell,James McConnell,14,u,has joined Ajax on loan for the rest of the season.,0.0
+395,Morton,Tyler Morton,14,u,Has joined Lyon permanently.,0.0
+397,Darwin,Darwin Núñez Ribeiro,14,u,Has joined Al-Hilal permanently.,0.0
+398,Danns,Jayden Danns,14,i,Hamstring injury - Unknown return date,0.0
+499,Isak,Alexander Isak,14,i,Ankle injury - Unknown return date,0.0
+661,Ekitiké,Hugo Ekitiké,14,a,,100.0
+692,Leoni,Giovanni Leoni,14,i,Knee injury - Expected back 01 Sep,0.0
+399,Ederson M.,Ederson Santana de Moraes,43,u,has joined Fenerbache permanently.,0.0
+401,Bettinelli,Marcus Bettinelli,43,a,,100.0
+402,Aït-Nouri,Rayan Aït-Nouri,43,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+403,Gvardiol,Joško Gvardiol,43,a,,100.0
+404,Akanji,Manuel Akanji,43,u,has joined Inter Milan on loan for the rest of the season.,0.0
+406,Khusanov,Abdukodir Khusanov,43,a,,100.0
+409,Stones,John Stones,43,i,Thigh injury - Unknown return date,0.0
+410,Lewis,Rico Lewis,43,a,,100.0
+411,O'Reilly,Nico O'Reilly,43,a,,100.0
+412,Vitor Reis,Vitor de Oliveira Nunes dos Reis,43,u,Has joined Girona on loan for the rest of the season.,0.0
+413,Marmoush,Omar Marmoush,43,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+414,Foden,Phil Foden,43,a,,100.0
+415,Savinho,Sávio Moreira de Oliveira,43,a,,100.0
+417,Cherki,Rayan Cherki,43,a,,100.0
+418,Doku,Jérémy Doku,43,i,Leg injury - Expected back 01 Jan,0.0
+420,Gündoğan,İlkay Gündoğan,43,u,has joined Galatasaray permanently.,0.0
+421,Rodrigo,Rodrigo 'Rodri' Hernandez Cascante,43,d,Muscle injury - 50% chance of playing,50.0
+422,Kovačić,Mateo Kovačić,43,i,Ankle injury - Unknown return date,0.0
+423,N.Gonzalez,Nico González Iglesias,43,a,,100.0
+424,Bobb,Oscar Bobb,43,i,Hamstring injury - Expected back 27 Jan,0.0
+425,Echeverri,Claudio Echeverri,43,u,Has joined Bayer Leverkusen on loan for the rest of the season.,0.0
+428,Nypan,Sverre Nypan,43,u,Has joined Middlesbrough on loan for the rest of the season.,0.0
+430,Haaland,Erling Haaland,43,a,,100.0
+119,Mbeumo,Bryan Mbeumo,1,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+432,Onana,André Onana,1,u,has joined Trabzonspor on loan for the rest of the season.,0.0
+433,Harrison,Elyh Harrison,1,u,On loan to Shrewsbury Town,0.0
+436,De Ligt,Matthijs de Ligt,1,i,Back injury - Unknown return date,0.0
+437,Martinez,Lisandro Martínez,1,a,,100.0
+438,Mazraoui,Noussair Mazraoui,1,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+440,Dalot,Diogo Dalot Teixeira,1,a,,100.0
+442,Maguire,Harry Maguire,1,i,Hamstring injury - Unknown return date,0.0
+445,Amass,Harry Amass,1,u,has joined Sheffield Wednesday on loan for the rest of the season.,0.0
+447,Heaven,Ayden Heaven,1,a,,100.0
+449,B.Fernandes,Bruno Borges Fernandes,1,i,Hamstring injury - Expected back 17 Jan,0.0
+450,Cunha,Matheus Santos Carneiro da Cunha,1,a,,100.0
+451,Rashford,Marcus Rashford,1,u,Has joined Barcelona on loan for the rest of the season,0.0
+452,Amad,Amad Diallo,1,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+454,Antony,Antony dos Santos,1,u,has joined Real Betis permanently.,0.0
+455,Mount,Mason Mount,1,a,,100.0
+457,Casemiro,Carlos Henrique Casimiro,1,a,,100.0
+458,Mainoo,Kobbie Mainoo,1,i,Calf injury - Expected back 17 Jan,0.0
+460,Collyer,Toby Collyer,1,u,Has joined West Bromwich Albion on loan for the rest of the season.,0.0
+464,Moorhouse,Jack Moorhouse,1,u,has joined Leyton Orient on loan for the rest of the season.,0.0
+465,Højlund,Rasmus Højlund,1,u,has joined Napoli on loan for the rest of the season.,0.0
+466,Zirkzee,Joshua Zirkzee,1,a,,100.0
+468,Wheatley,Ethan Wheatley,1,u,has joined Northampton Town on loan for the rest of the season.,0.0
+681,Šeško,Benjamin Sesko,1,a,,100.0
+52,J.Ramsey,Jacob Ramsey,4,a,,100.0
+135,Wissa,Yoane Wissa,4,a,,100.0
+469,Pope,Nick Pope,4,d,Groin Injury - 75% chance of playing,75.0
+472,Odysseas,Odysseas Vlachodimos,4,u,Has joined Sevilla on loan for the rest of the season.,0.0
+473,Hall,Lewis Hall,4,a,,100.0
+474,Schär,Fabian Schär,4,a,,100.0
+475,Botman,Sven Botman,4,d,Back injury - 25% chance of playing,25.0
+476,Burn,Dan Burn,4,i,Rib Injury - Expected back 18 Jan,0.0
+477,Livramento,Tino Livramento,4,i,Knee injury - Expected back 04 Jan,0.0
+478,Trippier,Kieran Trippier,4,i,Hamstring injury - Expected back 04 Jan,0.0
+479,Krafth,Emil Krafth,4,i,Knee injury - Expected back 04 Jan,0.0
+480,Lascelles,Jamaal Lascelles,4,d,Lack of match fitness - 25% chance of playing,25.0
+482,Ashby,Harrison Ashby,4,a,,100.0
+484,Targett,Matt Targett,4,u,has joined Middlesbrough on loan for the rest of the season.,0.0
+485,Gordon,Anthony Gordon,4,a,,100.0
+490,Joelinton,Joelinton Cássio Apolinário de Lira,4,a,,100.0
+491,Tonali,Sandro Tonali,4,a,,100.0
+492,Antoñito C.,Antoñito Cordero Campillo,4,u,has joined KVC Westerlo on loan for the rest of the season.,0.0
+494,Willock,Joe Willock,4,a,,100.0
+495,Hayden,Isaac Hayden,4,u,Has departed the club as a free agent.,0.0
+496,Kuol,Garang Kuol,4,u,has joined Sparta Prague permanently.,0.0
+497,L.Miley,Lewis Miley,4,a,,100.0
+498,White,Joe White,4,u,Has joined Leyton Orient on loan for the rest of the season.,0.0
+500,Osula,William Osula,4,d,Ankle injury - 25% chance of playing,25.0
+12,Zinchenko,Oleksandr Zinchenko,17,a,,100.0
+502,Sels,Matz Sels,17,a,,100.0
+503,C.Miguel,Carlos Miguel dos Santos Pereira,17,u,Has joined Palmeiras permanently.,0.0
+504,Turner,Matt Turner,17,u,Has joined Lyon permanently.,0.0
+506,Murillo,Murillo Costa dos Santos,17,a,,100.0
+507,Aina,Ola Aina,17,d,Lack of match fitness - 25% chance of playing,25.0
+509,David Carmo,David Mota Veiga Teixeira do Carmo,17,u,has joined Real Oviedo on loan for the rest of the season.,0.0
+512,O.Richards,Omar Richards,17,u,has joined Rio Ave on loan for the rest of the season.,0.0
+514,Boly,Willy Boly,17,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+515,Gibbs-White,Morgan Gibbs-White,17,a,,100.0
+516,Hudson-Odoi,Callum Hudson-Odoi,17,a,,100.0
+518,Jota,João Pedro Ferreira da Silva,17,u,has joined Besiktas on loan for the rest of the season.,0.0
+519,Dominguez,Nicolás Domínguez,17,a,,100.0
+520,O'Brien,Lewis O'Brien,17,u,Has joined Wrexham permanently.,0.0
+521,Sangaré,Ibrahim Sangaré,17,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+522,Yates,Ryan Yates,17,i,Hamstring injury - Expected back 17 Jan,0.0
+523,Da Silva Moreira,Eric da Silva Moreira,17,u,has joined Rio Ave on loan for the rest of the season.,0.0
+524,Stamenic,Marko Stamenić,17,u,Has joined Swansea City permanently.,0.0
+525,Wood,Chris Wood,17,i,Knee injury - Unknown return date,0.0
+527,Awoniyi,Taiwo Awoniyi,17,a,,100.0
+669,Ndoye,Dan Ndoye,17,i,Knock - Unknown return date,0.0
+675,Gunn,Angus Gunn,17,a,,100.0
+699,Douglas Luiz,Douglas Luiz Soares de Paulo,17,a,,100.0
+729,Cuiabano,Luis Eduardo Soares da Silva,17,u,has joined Botafogo on loan for the rest of the season.,0.0
+734,Bakwa,Dilane Bakwa,17,a,,100.0
+531,Ballard,Daniel Ballard,56,a,,100.0
+533,Alese,Aji Alese,56,i,Shoulder injury - Unknown return date,0.0
+535,Cirkin,Dennis Cirkin,56,a,,100.0
+536,Hjelde,Leo Fuhr Hjelde,56,a,,100.0
+537,Huggins,Niall Huggins,56,u,has joined Wycombe Wanderers on loan for the rest of the season.,0.0
+539,O'Nien,Luke O'Nien,56,s,Suspended until 01 Jan,0.0
+541,Reinildo,Reinildo Mandava,56,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+542,Seelt,Jenson Seelt,56,u,has joined Wolfsburg on loan for the rest of the season.,0.0
+544,Diarra,Habib Diarra,56,i,International Duty - Unknown return date,0.0
+545,Roberts,Patrick Roberts,56,u,has joined Birmingham City on loan for the rest of the season.,0.0
+546,Aleksić,Milan Aleksić,56,u,has joined Cracovia on loan for the rest of the season.,0.0
+547,E.Le Fée,Enzo Le Fée,56,a,,100.0
+548,Mundle,Romaine Mundle,56,a,,100.0
+552,Sadiki,Noah Sadiki,56,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+553,Talbi,Chemsdine Talbi,56,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+555,Browne,Alan Browne,56,u,has joined Middlesbrough on loan for the rest of the season.,0.0
+556,Ekwah,Pierre Ekwah Elimby,56,u,Has joined AS Saint-Etienne permanently.,0.0
+559,Triantis,Nectarios Triantis,56,u,has joined Minnesota United permanently.,0.0
+563,Luís Hemir,Luís Hemir Silva Semedo,56,u,has joined Moreirense on loan for the rest of the season.,0.0
+564,Rusyn,Nazarii Rusyn,56,u,has joined Arka on loan for the rest of the season.,0.0
+678,Masuaku,Arthur Masuaku,56,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+683,Alderete,Omar Alderete,56,a,,100.0
+735,Traoré,Bertrand Traoré,56,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+569,Romero,Cristian Romero,6,s,Suspended until 01 Jan,0.0
+571,Davies,Ben Davies,6,a,,100.0
+572,Dragusin,Radu Drăgușin,6,a,,100.0
+574,Udogie,Destiny Udogie,6,i,Hamstring injury - Expected back 17 Jan,0.0
+576,Phillips,Ashley Phillips,6,u,Has joined Stoke City on loan for the rest of the season.,0.0
+577,Takai,Takai Kōta,6,d,Lack of match fitness - 75% chance of playing,75.0
+578,Vuskovic,Luka Vušković,6,u,has joined Hamburger SV on loan for the rest of the season.,0.0
+579,Son,Son Heung-min,6,u,Has joined Los Angeles FC permanently.,0.0
+581,Maddison,James Maddison,6,i,Anterior cruciate ligament - Unknown return date,0.0
+582,Kudus,Mohammed Kudus,6,a,,100.0
+583,Kulusevski,Dejan Kulusevski,6,i,Knee injury - Unknown return date,0.0
+586,Bergvall,Lucas Bergvall,6,a,,100.0
+587,Bissouma,Yves Bissouma,6,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+588,Odobert,Wilson Odobert,6,a,,100.0
+589,Solomon,Manor Solomon,6,u,has joined Villarreal CF on loan for the rest of the season.,0.0
+590,Bryan,Bryan Gil Salvatierra,6,u,has joined Girona permanently.,0.0
+591,Gray,Archie Gray,6,a,,100.0
+592,Moore,Mikey Moore,6,u,Has joined Rangers on loan for the rest of the season.,0.0
+593,P.M.Sarr,Pape Matar Sarr,6,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+594,Min-hyeok,Yang Min-hyeok,6,u,Has joined Portsmouth on loan for the rest of the season.,0.0
+596,Solanke,Dominic Solanke-Mitchell,6,i,Ankle injury - Unknown return date,0.0
+598,Lankshear,Will Lankshear,6,u,Has joined Oxford United on loan for the rest of the season.,0.0
+717,Xavi,Xavi Simons,6,s,Suspended until 07 Jan,0.0
+726,Kolo Muani,Randal Kolo Muani,6,a,,100.0
+149,Igor,Igor Julio dos Santos de Paulo,21,a,,100.0
+601,Foderingham,Wes Foderingham,21,u,has joined Aris Limassol permanently.,0.0
+603,Diouf,El Hadji Malick Diouf,21,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+604,Emerson,Emerson Palmieri dos Santos,21,u,has joined Marseille permanently.,0.0
+606,Mavropanos,Konstantinos Mavropanos,21,a,,100.0
+607,N.Aguerd,Nayef Aguerd,21,u,has joined Marseille permanently.,0.0
+608,Scarles,Ollie Scarles,21,d,Knock - 75% chance of playing,75.0
+610,Wan-Bissaka,Aaron Wan-Bissaka,21,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+611,Casey,Kaelan Casey,21,u,Has joined Swansea City on loan for the rest of the season.,0.0
+612,L.Paquetá,Lucas Tolentino Coelho de Lima,21,a,,100.0
+613,Souček,Tomáš Souček,21,a,,100.0
+615,Summerville,Crysencio Summerville,21,a,,100.0
+616,Álvarez,Edson Álvarez Velázquez,21,u,Has joined Fenerbahçe on loan for the rest of the season.,0.0
+617,Cornet,Maxwel Cornet,21,u,has joined Genoa on loan for the rest of the season.,0.0
+619,L.Guilherme,Luis Guilherme Lira dos Santos,21,a,,100.0
+620,Earthy,George Earthy,21,a,,100.0
+622,Orford,Lewis Orford,21,u,has joined Stevenage on loan for the rest of the season.,0.0
+623,Potts,Freddie Potts,21,a,,100.0
+625,Füllkrug,Niclas Füllkrug,21,a,,100.0
+738,Fabianski,Lukasz Fabianski,21,a,,100.0
+629,Bentley,Daniel Bentley,39,i,Ankle injury - Unknown return date,0.0
+631,Agbadou,Emmanuel Agbadou,39,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+632,Doherty,Matt Doherty,39,a,,100.0
+633,H.Bueno,Hugo Bueno López,39,d,Knock - 75% chance of playing,75.0
+634,Mosquera,Yerson Mosquera Valdelamar,39,a,,100.0
+635,R.Gomes,Rodrigo Martins Gomes,39,i,Groin Injury - Expected back 17 Jan,0.0
+637,Toti,Toti Gomes,39,i,Hamstring injury - Unknown return date,0.0
+638,Hoever,Ki-Jana Hoever,39,a,,100.0
+639,Meupiyou,Bastien Meupiyou Menadjou,39,u,On loan to FC Alverca,0.0
+640,Pedro Lima,Pedro Cardoso de Lima,39,u,has joined Porto on loan for the rest of the season.,0.0
+642,Hee Chan,Hwang Hee-chan,39,a,,100.0
+643,André,André Trindade da Costa Neto,39,a,,100.0
+644,Bellegarde,Jean-Ricner Bellegarde,39,i,Hamstring injury - Expected back 24 Jan,0.0
+645,Fer López,Fer López González,39,a,,100.0
+646,Gomes,João Victor Gomes da Silva,39,a,,100.0
+647,Guedes,Gonçalo Manuel Ganchinho Guedes,39,u,Has joined Real Sociedad permanently.,0.0
+648,Munetsi,Marshall Munetsi,39,i,Calf injury - Expected back 18 Jan,0.0
+649,B.Traore,Boubacar Traoré,39,u,Has joined FC Metz on loan for the rest of the season.,0.0
+650,Chirewa,Tawanda Chirewa,39,n,On international duty at the Africa Cup of Nations from Gameweek 17 onwards. - Unknown return date,0.0
+653,Hodge,Joe Hodge,39,u,Signed by CD Tondela,0.0
+654,Strand Larsen,Jørgen Strand Larsen,39,a,,100.0
+655,Fábio Silva,Fábio Soares Silva,39,u,has joined Borussia Dortmund permanently.,0.0
+656,Kalajdžić,Saša Kalajdžić,39,u,has joined LASK on loan for the rest of the season.,0.0
+657,Chiwome,Leon Chiwome,39,i,Knee injury - Unknown return date,0.0
+709,Krejčí,Ladislav Krejcí,39,a,,100.0
