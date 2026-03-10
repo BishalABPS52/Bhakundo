@@ -1,0 +1,23 @@
+# Core API Dependencies (Minimal for Render deployment)
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic[email]
+email-validator>=2.0.0
+
+# Data Processing (Required for model loading)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Machine Learning (Pre-trained models only - no training)
+scikit-learn==1.3.2
+xgboost==2.0.2
+lightgbm==4.1.0
+
+# External API
+requests>=2.31.0
+python-dotenv==1.0.0
+
+# Database (for prediction history)
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
