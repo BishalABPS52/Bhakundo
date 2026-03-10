@@ -194,7 +194,7 @@ def get_saved_prediction(match_id: str):
 
 # Load match data and enhanced features
 matches_df = pd.read_csv(base_path / 'required' / 'data' / 'raw' / 'pl' / 'pl_all_seasons_combined.csv')
-matches_df['match_date'] = pd.to_datetime(matches_df['match_date'], errors='coerce', infer_datetime_format=True)
+matches_df['match_date'] = pd.to_datetime(matches_df['match_date'], errors='coerce')
 matches_df = matches_df[matches_df['status'].str.upper().isin(['FINISHED', 'COMPLETE'])].copy()
 
 # Drop rows with NaN goals
