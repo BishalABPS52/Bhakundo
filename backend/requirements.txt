@@ -1,16 +1,26 @@
-fastapi==0.135.1
+# Core API
+fastapi==0.115.6
 uvicorn[standard]==0.34.0
 pydantic==2.10.6
-email-validator>=2.0.0
+pydantic[email]==2.10.6
+email-validator==2.2.0
+
+# Data Processing
 pandas==2.2.3
-numpy>=1.26.0
-scipy>=1.13.0
-scikit-learn==1.4.2
+numpy==1.26.4
+scipy==1.13.1
+
+# Machine Learning (models pickled with sklearn 1.8.0)
+scikit-learn==1.8.0
 xgboost==2.1.3
 lightgbm==4.6.0
 catboost==1.2.10
-joblib>=1.4.0
-requests>=2.32.0
+joblib==1.4.2
+
+# External API
+requests==2.32.3
 python-dotenv==1.0.1
-sqlalchemy>=2.0.36
-psycopg2-binary>=2.9.10
+
+# Database
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
