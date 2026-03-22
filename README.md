@@ -205,20 +205,6 @@ uvicorn backend.api_server:app --reload --port 8000
 ```
 Runs on http://localhost:8000
 
-#### Environment Variables
-
-Copy `.env.example` to `.env` and fill in:
-
-```
-DATABASE_URL=postgresql://...
-FOOTBALL_API_KEY=your_football_data_api_key
-FRONTEND_API_KEY=your_frontend_api_key
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=your_password
-```
-
----
-
 ## Developer
 
 ### Built by [Bishal Shrestha](https://bishalshrestha52.com.np)
