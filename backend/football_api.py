@@ -363,8 +363,99 @@ class FootballAPI:
         # Default to gameweek 30 for 2025-26 season (March 2026)
         return 30
     
+    def _get_fpl_standings(self) -> Optional[List[Dict]]:
+        """Fetch standings from FPL API - teams sorted by points"""
+        try:
+            bootstrap = self._get_fpl_bootstrap()
+            if not bootstrap or 'teams' not in bootstrap:
+                return None
+            
+            # Get team mapping
+            team_map = self._fpl_team_map()
+            
+            # Build standings from bootstrap teams data
+            standings = []
+            for team in bootstrap.get('teams', []):
+                team_id = team.get('id')
+                fpl_team_name = team.get('name', '')
+                db_team_name = team_map.get(team_id, '')
+                
+                # Use database team name for consistency
+                if not db_team_name:
+                    continue
+                
+                standings.append({
+                    'team': db_team_name,
+                    'played': team.get('played', 0),
+                    'won': team.get('wins', 0),
+                    'drawn': team.get('draws', 0),
+                    'lost': team.get('losses', 0),
+                    'gf': team.get('points_for', 0),  # FPL uses "points_for" for goals
+                    'ga': team.get('points_against', 0),  # FPL uses "points_against" for goals against
+                    'gd': team.get('points_for', 0) - team.get('points_against', 0),
+                    'points': team.get('league_points', 0) or (team.get('wins', 0) * 3 + team.get('draws', 0)),
+                    'form': ''
+                })
+            
+            # Sort by points descending, then GD, then GF
+            standings = sorted(
+                standings,
+                key=lambda x: (x['points'], x['gd'], x['gf']),
+                reverse=True
+            )
+            
+            # Add position and form (from finished matches)
+            for i, s in enumerate(standings, 1):
+                s['position'] = i
+            
+            # Try to populate form if available
+            finished = self.get_matches(status='FINISHED')
+            if finished:
+                form_data = {}
+                for team in self.stadiums.keys():
+                    form_data[team] = []
+                
+                for m in sorted(finished, key=lambda x: str(x.get('date') or '')):
+                    home = m.get('home_team')
+                    away = m.get('away_team')
+                    hg = m.get('home_goals') if m.get('home_goals') is not None else m.get('home_score')
+                    ag = m.get('away_goals') if m.get('away_goals') is not None else m.get('away_score')
+                    
+                    if not home or not away or hg is None or ag is None:
+                        continue
+                    
+                    hg, ag = int(hg), int(ag)
+                    if hg > ag:
+                        form_data[home].append('W')
+                        form_data[away].append('L')
+                    elif hg < ag:
+                        form_data[away].append('W')
+                        form_data[home].append('L')
+                    else:
+                        form_data[home].append('D')
+                        form_data[away].append('D')
+                
+                # Update standings with form (last 5)
+                for s in standings:
+                    s['form'] = ','.join(form_data.get(s['team'], [])[-5:])
+            
+            if standings:
+                print(f"✅ FPL standings fetched: {len(standings)} teams")
+                return standings
+        except Exception as e:
+            print(f"⚠️ FPL standings error: {e}")
+        
+        return None
+    
     def get_standings(self) -> List[Dict]:
-        """Get current Premier League standings"""
+        """Get current Premier League standings with multiple fallbacks:
+        PRIORITY ORDER:
+        1. Football-Data.org API (most reliable & accurate stats)
+        2. FPL API as fallback
+        3. Built from finished matches
+        4. Hardcoded fallback
+        """
+        # Try football-data.org API FIRST (has most accurate stats)
         try:
             url = f"{self.base_url}/competitions/{self.competition_id}/standings"
             params = {'season': self.season}
@@ -375,14 +466,18 @@ class FootballAPI:
                 data = response.json()
                 standings = data.get('standings', [])
                 if standings:
+                    print("✅ Football-Data.org standings fetched")
                     return self._format_standings(standings[0].get('table', []))
-
-            # Build from live finished fixtures when standings endpoint is unavailable.
-            return self._build_standings_from_finished_matches()
-                
         except Exception as e:
-            print(f"⚠️ Standings API error: {e}")
-            return self._build_standings_from_finished_matches()
+            print(f"⚠️ Football-Data.org standings error: {e}")
+        
+        # Try FPL API as backup (always current, no auth needed)
+        fpl_result = self._get_fpl_standings()
+        if fpl_result:
+            return fpl_result
+
+        # Build from live finished fixtures as fallback
+        return self._build_standings_from_finished_matches()
 
     def _build_standings_from_finished_matches(self) -> List[Dict]:
         """Build standings from finished matches (FPL/API/CSV), newest reliable fallback."""

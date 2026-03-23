@@ -247,11 +247,24 @@ class StandingsEntry(BaseModel):
 
 
 def calculate_current_standings() -> List[StandingsEntry]:
-    """Get current standings with live API first, then local historical fallback."""
-    # Prefer live API standings so table updates automatically without server restarts.
+    """
+    Get current standings with priority:
+    1. Try football-data.org API (live, most current)
+    2. Fall back to database (pre-fetched standings)
+    3. Calculate from finished matches (fallback)
+    """
+    from backend.database import Standing, get_db_session
+    
+    current_gw = football_api.get_current_gameweek()
+    
+    # ─────────────────────────────────────────────────────────────────────────────
+    # STEP 1: Try football-data.org API (LIVE)
+    # ─────────────────────────────────────────────────────────────────────────────
     try:
+        print(f"📡 [STANDINGS] Attempting football-data.org API...")
         api_rows = football_api.get_standings()
         if api_rows:
+            print(f"✅ [STANDINGS] Got {len(api_rows)} teams from API")
             result = []
             for row in api_rows:
                 form_raw = row.get('form', [])
@@ -279,11 +292,127 @@ def calculate_current_standings() -> List[StandingsEntry]:
             if result:
                 return sorted(result, key=lambda x: x.position)
     except Exception as e:
-        print(f"⚠️ Live standings fallback triggered: {e}")
-
-    # Fallback: calculate from preloaded historical dataframe.
-    # Get all finished matches from current season
-    current_season = matches_df[matches_df['season'] == '2025-26'].copy()
+        print(f"⚠️ [STANDINGS] API error: {e}")
+    
+    # ─────────────────────────────────────────────────────────────────────────────
+    # STEP 2: Fall back to database standings
+    # ─────────────────────────────────────────────────────────────────────────────
+    try:
+        print(f"📚 [STANDINGS] Attempting database fallback (GW{current_gw})...")
+        db = get_db_session()
+        
+        standings_rows = db.query(Standing).filter(
+            Standing.season == '2025-26',
+            Standing.gameweek == current_gw
+        ).order_by(Standing.position).all()
+        
+        if standings_rows:
+            print(f"✅ [STANDINGS] Got {len(standings_rows)} teams from database")
+            result = []
+            for row in standings_rows:
+                form_raw = row.form or ''
+                form = [x.strip() for x in form_raw.split(',') if x.strip() in {'W', 'D', 'L'}]
+                
+                result.append(StandingsEntry(
+                    position=row.position,
+                    team=row.team,
+                    played=row.played,
+                    won=row.won,
+                    drawn=row.drawn,
+                    lost=row.lost,
+                    goals_for=row.goals_for,
+                    goals_against=row.goals_against,
+                    goal_difference=row.goal_difference,
+                    points=row.points,
+                    form=form[-5:]
+                ))
+            
+            db.close()
+            return result
+        
+        db.close()
+        print(f"⚠️ [STANDINGS] No standings found in database for GW{current_gw}")
+    except Exception as e:
+        print(f"⚠️ [STANDINGS] Database error: {e}")
+    
+    # ─────────────────────────────────────────────────────────────────────────────
+    # STEP 3: Fall back to calculating from finished matches
+    # ─────────────────────────────────────────────────────────────────────────────
+    print(f"🔄 [STANDINGS] Calculating from finished matches...")
+    try:
+        current_season = matches_df[matches_df['season'] == '2025-26'].copy()
+        
+        standings = {}
+        
+        for team in CURRENT_SEASON_TEAMS:
+            team_matches = current_season[
+                (current_season['home_team'] == team) | (current_season['away_team'] == team)
+            ].sort_values('match_date')
+            
+            stats = {
+                'team': team,
+                'played': len(team_matches),
+                'won': 0,
+                'drawn': 0,
+                'lost': 0,
+                'goals_for': 0,
+                'goals_against': 0,
+                'points': 0,
+                'form': []
+            }
+            
+            for _, match in team_matches.iterrows():
+                home_goals = match.get('home_goals') if pd.notna(match.get('home_goals')) else match.get('home_goals', 0)
+                away_goals = match.get('away_goals') if pd.notna(match.get('away_goals')) else match.get('away_goals', 0)
+                
+                if pd.isna(home_goals) or pd.isna(away_goals):
+                    continue
+                    
+                if match['home_team'] == team:
+                    gf, ga = int(home_goals), int(away_goals)
+                else:
+                    gf, ga = int(away_goals), int(home_goals)
+                
+                stats['goals_for'] += gf
+                stats['goals_against'] += ga
+                
+                if gf > ga:
+                    stats['won'] += 1
+                    stats['points'] += 3
+                    stats['form'].append('W')
+                elif gf == ga:
+                    stats['drawn'] += 1
+                    stats['points'] += 1
+                    stats['form'].append('D')
+                else:
+                    stats['lost'] += 1
+                    stats['form'].append('L')
+            
+            stats['goal_difference'] = stats['goals_for'] - stats['goals_against']
+            stats['form'] = stats['form'][-5:]
+            standings[team] = stats
+        
+        sorted_standings = sorted(
+            standings.values(),
+            key=lambda x: (x['points'], x['goal_difference'], x['goals_for']),
+            reverse=True
+        )
+        
+        result = []
+        for i, entry in enumerate(sorted_standings, 1):
+            result.append(StandingsEntry(
+                position=i,
+                **entry
+            ))
+        
+        print(f"✅ [STANDINGS] Calculated {len(result)} teams from finished matches")
+        return result
+    
+    except Exception as e:
+        print(f"❌ [STANDINGS] Match calculation error: {e}")
+    
+    print(f"❌ [STANDINGS] All methods failed - returning empty standings")
+    return []
     
     standings = {}
     

@@ -113,6 +113,41 @@ class Actual(Base):
         return f"<Actual {self.match_id}: {self.home_team} {self.actual_home_goals}-{self.actual_away_goals} {self.away_team}>"
 
 
+class Standing(Base):
+    """Store Premier League standings - updated periodically"""
+    __tablename__ = "standing"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    
+    # Season and Gameweek
+    season = Column(String(20), default="2025-26", nullable=False, index=True)
+    gameweek = Column(Integer, nullable=False, index=True)  # Last completed gameweek
+    
+    # Team information
+    team = Column(String(100), nullable=False, index=True)
+    position = Column(Integer, nullable=False)
+    
+    # Statistics
+    played = Column(Integer, nullable=False)
+    won = Column(Integer, nullable=False)
+    drawn = Column(Integer, nullable=False)
+    lost = Column(Integer, nullable=False)
+    goals_for = Column(Integer, nullable=False)
+    goals_against = Column(Integer, nullable=False)
+    goal_difference = Column(Integer, nullable=False)
+    points = Column(Integer, nullable=False)
+    
+    # Form (last 5 matches)
+    form = Column(String(20), nullable=True)  # e.g., "W,W,D,L,W"
+    
+    # Metadata
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False, index=True)
+    source = Column(String(50), default="api")  # 'api' or 'calculated'
+    
+    def __repr__(self):
+        return f"<Standing {self.position}. {self.team} - {self.points}pts (GW{self.gameweek})>"
+
+
 def init_db():
     """Initialize database and create tables"""
     Base.metadata.create_all(bind=engine)
