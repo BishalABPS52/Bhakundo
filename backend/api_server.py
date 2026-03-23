@@ -247,7 +247,41 @@ class StandingsEntry(BaseModel):
 
 
 def calculate_current_standings() -> List[StandingsEntry]:
-    """Calculate live Premier League standings from match data"""
+    """Get current standings with live API first, then local historical fallback."""
+    # Prefer live API standings so table updates automatically without server restarts.
+    try:
+        api_rows = football_api.get_standings()
+        if api_rows:
+            result = []
+            for row in api_rows:
+                form_raw = row.get('form', [])
+                if isinstance(form_raw, str):
+                    form = [x.strip() for x in form_raw.split(',') if x.strip() in {'W', 'D', 'L'}]
+                elif isinstance(form_raw, list):
+                    form = [str(x).strip() for x in form_raw if str(x).strip() in {'W', 'D', 'L'}]
+                else:
+                    form = []
+
+                result.append(StandingsEntry(
+                    position=int(row.get('position') or 0),
+                    team=row.get('team', ''),
+                    played=int(row.get('played') or 0),
+                    won=int(row.get('won') or 0),
+                    drawn=int(row.get('drawn') or 0),
+                    lost=int(row.get('lost') or 0),
+                    goals_for=int(row.get('gf', row.get('goals_for', 0)) or 0),
+                    goals_against=int(row.get('ga', row.get('goals_against', 0)) or 0),
+                    goal_difference=int(row.get('gd', row.get('goal_difference', 0)) or 0),
+                    points=int(row.get('points') or 0),
+                    form=form[-5:]
+                ))
+
+            if result:
+                return sorted(result, key=lambda x: x.position)
+    except Exception as e:
+        print(f"⚠️ Live standings fallback triggered: {e}")
+
+    # Fallback: calculate from preloaded historical dataframe.
     # Get all finished matches from current season
     current_season = matches_df[matches_df['season'] == '2025-26'].copy()
     

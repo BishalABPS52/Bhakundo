@@ -258,22 +258,6 @@ export default function Help({ darkMode }) {
           <p className={`text-xl ${textSecondary}`}>Everything you need to know about Bhakundo Predictor</p>
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <div className={`${cardBg} border rounded-xl p-6 text-center`}>
-            <div className="text-4xl font-bold text-blue-500 mb-2">83.4%</div>
-            <p className={`text-sm ${textSecondary}`}>Score-Outcome Alignment</p>
-          </div>
-          <div className={`${cardBg} border rounded-xl p-6 text-center`}>
-            <div className="text-4xl font-bold text-green-500 mb-2">3</div>
-            <p className={`text-sm ${textSecondary}`}>Models Working Together</p>
-          </div>
-          <div className={`${cardBg} border rounded-xl p-6 text-center`}>
-            <div className="text-4xl font-bold text-teal-500 mb-2">900+</div>
-            <p className={`text-sm ${textSecondary}`}>Training Matches</p>
-          </div>
-        </div>
-
         {/* FAQ Section */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (

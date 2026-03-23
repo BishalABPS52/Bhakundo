@@ -134,13 +134,19 @@ export default function Home({ darkMode }) {
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 ${textPrimary} text-center`}>About Bhakundo</h2>
           <div className={`text-sm sm:text-base md:text-lg ${textSecondary} space-y-3 sm:space-y-4 leading-relaxed`}>
             <p>
-              Bhakundo knows what wins football matches. We analyze 85+ match factors—from team form and tactical setups to player fitness and head-to-head records. Everything that moves the scoreline.
+              Bhakundo started as a personal project - a curiosity about whether data could predict football.
             </p>
             <p>
-              Our machine learning models have studied 900+ matches, absorbing patterns and trends across seasons. They've seen the upsets, the comebacks, the heartbreaks.
+              It grew into something real.
             </p>
             <p>
-              We deliver 47.5% prediction accuracy—40% better than blind hope. Prepare yourself before kickoff, so your favorite team's performance doesn't catch you off guard. Your heart will thank you.
+              Today, Bhakundo analyzes 125+ match factors - team form, player fitness, tactical setups, head-to-head history - trained on 1000+ real matches across seasons. It has seen the upsets, the comebacks, the last-minute drama.
+            </p>
+            <p>
+              The result is high-accuracy predictions for your favorite team, delivered before kickoff.
+            </p>
+            <p>
+              Not a guess. Just data doing what data does best.
             </p>
           </div>
         </div>

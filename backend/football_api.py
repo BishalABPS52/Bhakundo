@@ -376,11 +376,91 @@ class FootballAPI:
                 standings = data.get('standings', [])
                 if standings:
                     return self._format_standings(standings[0].get('table', []))
-            
-            return self._get_fallback_standings()
+
+            # Build from live finished fixtures when standings endpoint is unavailable.
+            return self._build_standings_from_finished_matches()
                 
         except Exception as e:
             print(f"⚠️ Standings API error: {e}")
+            return self._build_standings_from_finished_matches()
+
+    def _build_standings_from_finished_matches(self) -> List[Dict]:
+        """Build standings from finished matches (FPL/API/CSV), newest reliable fallback."""
+        try:
+            finished = self.get_matches(status='FINISHED')
+            if not finished:
+                return self._get_fallback_standings()
+
+            teams = sorted(set(self.stadiums.keys()))
+            table = {
+                t: {
+                    'team': t,
+                    'played': 0,
+                    'won': 0,
+                    'drawn': 0,
+                    'lost': 0,
+                    'gf': 0,
+                    'ga': 0,
+                    'gd': 0,
+                    'points': 0,
+                    '_form': []
+                }
+                for t in teams
+            }
+
+            for m in sorted(finished, key=lambda x: str(x.get('date') or '')):
+                home = m.get('home_team')
+                away = m.get('away_team')
+                hg = m.get('home_goals') if m.get('home_goals') is not None else m.get('home_score')
+                ag = m.get('away_goals') if m.get('away_goals') is not None else m.get('away_score')
+
+                if not home or not away or hg is None or ag is None:
+                    continue
+                if home not in table or away not in table:
+                    continue
+
+                hg, ag = int(hg), int(ag)
+                table[home]['played'] += 1
+                table[away]['played'] += 1
+                table[home]['gf'] += hg
+                table[home]['ga'] += ag
+                table[away]['gf'] += ag
+                table[away]['ga'] += hg
+
+                if hg > ag:
+                    table[home]['won'] += 1
+                    table[home]['points'] += 3
+                    table[away]['lost'] += 1
+                    table[home]['_form'].append('W')
+                    table[away]['_form'].append('L')
+                elif hg < ag:
+                    table[away]['won'] += 1
+                    table[away]['points'] += 3
+                    table[home]['lost'] += 1
+                    table[home]['_form'].append('L')
+                    table[away]['_form'].append('W')
+                else:
+                    table[home]['drawn'] += 1
+                    table[away]['drawn'] += 1
+                    table[home]['points'] += 1
+                    table[away]['points'] += 1
+                    table[home]['_form'].append('D')
+                    table[away]['_form'].append('D')
+
+            rows = []
+            for entry in table.values():
+                entry['gd'] = entry['gf'] - entry['ga']
+                entry['form'] = ','.join(entry['_form'][-5:])
+                entry.pop('_form', None)
+                rows.append(entry)
+
+            rows = sorted(rows, key=lambda x: (x['points'], x['gd'], x['gf']), reverse=True)
+            for i, r in enumerate(rows, 1):
+                r['position'] = i
+
+            return rows
+        except Exception as e:
+            print(f"⚠️ Standings build-from-matches error: {e}")
             return self._get_fallback_standings()
     
     def _format_standings(self, table: List[Dict]) -> List[Dict]:
