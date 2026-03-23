@@ -51,7 +51,7 @@ export default function Footer({ darkMode }) {
                 { label: 'Predictor',         href: '/predictor' },
                 { label: 'Standings',         href: '/standings' },
                 { label: 'Fixtures & Results',href: '/fixtures' },
-                { label: 'Help',              href: '/' },
+                { label: 'Help',              href: '/help' },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link href={href}>
@@ -86,9 +86,9 @@ export default function Footer({ darkMode }) {
             <ul className="space-y-3">
               {[
                 { label: 'About',       href: '/' },
-                { label: 'Help Center', href: '/' },
+                { label: 'Help Center', href: '/help' },
                 { label: 'Contact Us',  href: '/' },
-                { label: "FAQ's",       href: '/' },
+                { label: "FAQ's",       href: '/help' },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link href={href}>
