@@ -84,6 +84,7 @@ app.add_middleware(
         "http://localhost:3001",
         "https://bhakundo.vercel.app",
         "https://bhakundo-frontend.vercel.app",
+        "https://bhakundo.bishalshrestha52.com.np",
         "https://*.vercel.app",  # All Vercel deployments
     ],
     allow_credentials=True,
