@@ -1461,15 +1461,34 @@ async def predict_match(request: PredictionRequest, user: str = Depends(get_curr
 
         # STAGE 1: Get predictions from all models independently
 
-        # Base outcome prediction
+        # Base outcome prediction (ensemble: XGBoost + LightGBM)
         base_feature_vector = feature_df[base_features].values
         base_feature_scaled = base_scaler.transform(base_feature_vector)
-        base_proba = base_model.predict_proba(base_feature_scaled)[0]
+        
+        # Apply ensemble weights to base models [xgb_model, lgbm_model]
+        if isinstance(base_model, list):
+            base_probas = []
+            for model in base_model:
+                proba = model.predict_proba(base_feature_scaled)[0]
+                base_probas.append(proba)
+            # Apply ensemble weights
+            base_proba = base_weights[0] * base_probas[0] + base_weights[1] * base_probas[1]
+        else:
+            # Legacy: single model
+            base_proba = base_model.predict_proba(base_feature_scaled)[0]
 
         # Lineup outcome prediction
         lineup_feature_vector = feature_df[lineup_features].values
         lineup_feature_scaled = lineup_scaler.transform(lineup_feature_vector)
-        lineup_proba = lineup_model.predict_proba(lineup_feature_scaled)[0]
+        if isinstance(lineup_model, list):
+            lineup_probas = []
+            for model in lineup_model:
+                proba = model.predict_proba(lineup_feature_scaled)[0]
+                lineup_probas.append(proba)
+            # If it's an ensemble, apply average weights
+            lineup_proba = np.mean(lineup_probas, axis=0)
+        else:
+            lineup_proba = lineup_model.predict_proba(lineup_feature_scaled)[0]
 
         # Score prediction (outcome-aware - needs outcome probabilities)
         feature_df['outcome_prob_away']  = float(base_proba[0])
