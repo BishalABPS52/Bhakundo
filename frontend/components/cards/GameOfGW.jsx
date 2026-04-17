@@ -492,8 +492,22 @@ export default function GameOfGW({ darkMode }) {
 
         {/* Stadium */}
         {data.venue && (
-          <div className={`pb-4 text-xs sm:text-sm text-center ${muted}`}>
+          <div className={`px-5 pb-3 text-xs sm:text-sm text-center ${muted}`}>
             Stadium: {data.venue}
+          </div>
+        )}
+
+        {/* Reason - Game of the GW special feature */}
+        {data.reason && (
+          <div className="px-5 pb-5">
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-3 text-center">
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-wide">
+               Reason
+              </p>
+              <p className="text-sm sm:text-base font-semibold mt-1">
+                {data.reason}
+              </p>
+            </div>
           </div>
         )}
       </div>
