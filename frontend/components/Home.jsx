@@ -104,7 +104,7 @@ export default function Home({ darkMode }) {
             </div>
             <h3 className={`text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${textPrimary}`}>Advanced Analytics</h3>
             <p className={`text-sm sm:text-base ${textSecondary}`}>
-              Deep statistical analysis of team performance, player form, and historical data with 85+ features.
+              Deep statistical analysis of team performance, player form, and historical data with 125+ features.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function Home({ darkMode }) {
             </div>
             <h3 className={`text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${textPrimary}`}>High Accuracy</h3>
             <p className={`text-sm sm:text-base ${textSecondary}`}>
-              Trained on 900+ professional matches.
+              Trained on 1200+ professional matches.
             </p>
           </div>
         </div>

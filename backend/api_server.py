@@ -116,52 +116,47 @@ CURRENT_SEASON_TEAMS = [
     "Wolverhampton Wanderers FC"
 ]
 
-# Load enhanced models
+# Load optimized models from latest training
 try:
     # Determine base path (works for both local and Render deployment)
     base_path = Path(__file__).resolve().parent.parent
     models_dir = base_path / 'required' / 'data' / 'models'
     
-    # Load score prediction model (supports both single and ensemble models)
-    score_model_data = joblib.load(models_dir / 'score_prediction_model_enhanced_v3.pkl')
+    # Load ensemble model (XGBoost + LightGBM weighted ensemble)
+    ensemble_data = joblib.load(models_dir / 'pl_ensemble_model.pkl')
+    base_model = ensemble_data['models']  # [xgb_model, lgbm_model]
+    base_weights = ensemble_data['weights']  # Ensemble weights
+    base_scaler = ensemble_data['scaler']
+    base_features = ensemble_data['feature_columns']
+    base_label_mapping = ensemble_data.get('reverse_mapping', {0: 'Home Win', 1: 'Draw', 2: 'Away Win'})
+    base_accuracies = ensemble_data.get('accuracies', {})
     
-    # Check if ensemble or single model
-    score_is_ensemble = 'home_models' in score_model_data
-    
-    if score_is_ensemble:
-        # Ensemble model format
-        score_model_home = score_model_data['home_models']
-        score_model_away = score_model_data['away_models']
-        score_home_weights = score_model_data['home_weights']
-        score_away_weights = score_model_data['away_weights']
-        print("✅ Loaded ensemble score model (XGB + LightGBM + Linear)")
-    else:
-        # Single / blended model format
-        score_model_home = score_model_data['home_model']
-        score_model_away = score_model_data['away_model']
-        score_home_weights = None
-        score_away_weights = None
-        print("✅ Loaded blended score model (LGB + XGB v3)")
-    
+    # Load score prediction model (XGBoost + LightGBM regression ensemble)
+    score_model_data = joblib.load(models_dir / 'pl_score_model.pkl')
+    score_model_home = score_model_data['home_models']  # [xgb_score_home, lgbm_score_home]
+    score_model_away = score_model_data['away_models']  # [xgb_score_away, lgbm_score_away]
     score_scaler = score_model_data['scaler']
     score_features = score_model_data['feature_columns']
     score_max_goals = score_model_data.get('max_goals', 9)
+    score_mae_home = score_model_data.get('mae_home', 0.5)
+    score_mae_away = score_model_data.get('mae_away', 0.5)
+    # Score ensemble uses equal weights (list format: [xgb, lgbm])
+    score_is_ensemble = True
+    score_ensemble_weights = [0.5, 0.5]  # Equal weight for XGBoost and LightGBM
     
-    base_model_data = joblib.load(models_dir / 'base_outcome_model_enhanced.pkl')
-    base_model = base_model_data['model']
-    base_scaler = base_model_data['scaler']
-    base_features = base_model_data['feature_columns']
-    base_label_mapping = base_model_data.get('reverse_mapping', {0: 'A', 1: 'D', 2: 'H'})
+    # Load lineup model
+    lineup_data = joblib.load(models_dir / 'pl_lineup_model.pkl')
+    lineup_model = lineup_data['model']
+    lineup_scaler = lineup_data['scaler']
+    lineup_features = lineup_data['feature_columns']
+    lineup_label_mapping = lineup_data.get('reverse_mapping', {0: 'Home Win', 1: 'Draw', 2: 'Away Win'})
     
-    lineup_model_data = joblib.load(models_dir / 'lineup_model_enhanced.pkl')
-    lineup_model = lineup_model_data['model']
-    lineup_scaler = lineup_model_data['scaler']
-    lineup_features = lineup_model_data['feature_columns']
-    lineup_label_mapping = lineup_model_data.get('reverse_mapping', {0: 'A', 1: 'D', 2: 'H'})
-    
-    print("✅ Enhanced models v3 loaded successfully")
-    print(f"📊 Features: {len(score_features)} (Base/Lineup/Score)")
-    print(f"⚽ Score range: 0-{score_max_goals} goals")
+    print("✅ Optimized ensemble models (GW32+) loaded successfully")
+    print(f"📊 Outcome Features: {len(base_features)}")
+    print(f"🎯 Ensemble: XGBoost + LightGBM (Weights: {base_weights})")
+    if base_accuracies:
+        print(f"   XGBoost: {base_accuracies.get('xgboost', 0):.4f}, LightGBM: {base_accuracies.get('lightgbm', 0):.4f}, Ensemble: {base_accuracies.get('ensemble', 0):.4f}")
+    print(f"⚽ Score Model: XGBoost + LightGBM (MAE Home: {score_mae_home:.3f}, Away: {score_mae_away:.3f})")
     
     # Initialize ensemble predictor
     ensemble = AlignmentEnsemble()
@@ -1491,24 +1486,24 @@ async def predict_match(request: PredictionRequest, user: str = Depends(get_curr
 
         score_feature_scaled = score_scaler.transform(feature_df_for_score[score_features])
         
-        # Predict with ensemble or single model
+        # Predict with ensemble (XGBoost + LightGBM with equal weights)
         if score_is_ensemble:
-            # Ensemble prediction with weighted average
             home_preds = []
             away_preds = []
             
-            for model_name in ['xgboost', 'lightgbm', 'linear']:
-                h_pred = score_model_home[model_name].predict(score_feature_scaled)[0]
-                a_pred = score_model_away[model_name].predict(score_feature_scaled)[0]
-                home_preds.append(h_pred * score_home_weights[model_name])
-                away_preds.append(a_pred * score_away_weights[model_name])
+            # Iterate through models: [xgboost_model, lgbm_model]
+            for i, (h_model, a_model) in enumerate(zip(score_model_home, score_model_away)):
+                h_pred = h_model.predict(score_feature_scaled)[0]
+                a_pred = a_model.predict(score_feature_scaled)[0]
+                home_preds.append(h_pred * score_ensemble_weights[i])
+                away_preds.append(a_pred * score_ensemble_weights[i])
             
             home_goals_pred = sum(home_preds)
             away_goals_pred = sum(away_preds)
         else:
-            # Legacy single model prediction
-            home_goals_pred = score_model_home.predict(score_feature_scaled)[0]
-            away_goals_pred = score_model_away.predict(score_feature_scaled)[0]
+            # Legacy single model prediction (fallback)
+            home_goals_pred = score_model_home[0].predict(score_feature_scaled)[0] if isinstance(score_model_home, list) else score_model_home.predict(score_feature_scaled)[0]
+            away_goals_pred = score_model_away[0].predict(score_feature_scaled)[0] if isinstance(score_model_away, list) else score_model_away.predict(score_feature_scaled)[0]
         
         # IMPROVED SCORE ROUNDING STRATEGY
         # Use attack/defense strength to adjust predictions

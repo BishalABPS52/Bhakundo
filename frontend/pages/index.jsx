@@ -37,7 +37,7 @@ export default function App() {
     <>
       <Head>
         <title>Bhakundo - Prepare, Predict & Play</title>
-        <meta name="description" content="AI-powered Premier League match predictions with 85+ features" />
+        <meta name="description" content="AI-powered Premier League match predictions with 125+ features" />
       </Head>
 
       <div className={`min-h-screen ${bgClass} transition-colors duration-300`}>
