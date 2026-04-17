@@ -78,7 +78,7 @@ export default function Help({ darkMode }) {
           <ul className="space-y-1 ml-2">
             <li>• <strong className="text-blue-400">High score-outcome alignment</strong> (predicted scores match actual results)</li>
             <li>• <strong className="text-blue-400">High outcome accuracy</strong> (predicting win/draw/loss)</li>
-            <li>• Trained on <strong className="text-blue-400">900+ Premier League matches</strong></li>
+            <li>• Trained on <strong className="text-blue-400"> Premier League matches From 2010 to 2026</strong></li>
           </ul>
         </div>
       )

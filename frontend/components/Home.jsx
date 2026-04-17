@@ -14,7 +14,12 @@ const getApiHeaders = () => ({
 });
 
 export default function Home({ darkMode }) {
-  const [formData, setFormData] = React.useState({ email: '', message: '' });
+  const [formData, setFormData] = React.useState({ 
+    senderName: '', 
+    socialHandle: '', 
+    email: '', 
+    message: '' 
+  });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitStatus, setSubmitStatus] = React.useState(null);
 
@@ -28,7 +33,14 @@ export default function Home({ darkMode }) {
     e.preventDefault();
     
     if (!formData.email || !formData.message) {
-      setSubmitStatus({ type: 'error', message: 'Please fill in all fields' });
+      setSubmitStatus({ type: 'error', message: 'Email and Message are required' });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({ type: 'error', message: 'Please enter a valid email address' });
       return;
     }
 
@@ -36,10 +48,12 @@ export default function Home({ darkMode }) {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/send-contact`, {
+      const response = await fetch(`${API_BASE_URL}/contact-message`, {
         method: 'POST',
         headers: getApiHeaders(),
         body: JSON.stringify({
+          sender_name: formData.senderName || null,
+          social_handle: formData.socialHandle || null,
           email: formData.email,
           message: formData.message
         })
@@ -52,7 +66,7 @@ export default function Home({ darkMode }) {
           type: 'success', 
           message: data.message || 'Message sent successfully! We\'ll get back to you soon.' 
         });
-        setFormData({ email: '', message: '' });
+        setFormData({ senderName: '', socialHandle: '', email: '', message: '' });
       } else {
         setSubmitStatus({ 
           type: 'error', 
@@ -87,7 +101,7 @@ export default function Home({ darkMode }) {
           </div>
           
           <p className={`text-base sm:text-lg md:text-xl ${textSecondary} max-w-2xl mx-auto leading-relaxed px-4`}>
-              Bhakundo doesn't guess, it learns. Over 900 football matches analyzed, patterns decoded, trends spotted. Your predictions just got a serious upgrade.
+              Bhakundo doesn't guess, it learns.  Football matches from 2010 to 2026 analyzed, patterns decoded, trends spotted. Your predictions just got a serious upgrade.
             </p>
         </div>
 
@@ -170,8 +184,36 @@ export default function Home({ darkMode }) {
                 {submitStatus.message}
               </div>
             )}
+
+            {/* Name Field (Optional) */}
             <div>
-              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Email</label>
+              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Your Name <span className="text-gray-400 text-xs">(Optional)</span></label>
+              <input
+                type="text"
+                value={formData.senderName}
+                onChange={(e) => setFormData({ ...formData, senderName: e.target.value })}
+                className={`w-full px-4 py-3 rounded-xl border ${darkMode ? 'bg-slate-700 border-slate-600 text-white' : 'bg-white border-slate-300 text-slate-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                placeholder="Your Name"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            {/* Social Handle Field (Optional) */}
+            <div>
+              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Instagram Handle <span className="text-gray-400 text-xs">(Optional)</span></label>
+              <input
+                type="text"
+                value={formData.socialHandle}
+                onChange={(e) => setFormData({ ...formData, socialHandle: e.target.value })}
+                className={`w-full px-4 py-3 rounded-xl border ${darkMode ? 'bg-slate-700 border-slate-600 text-white' : 'bg-white border-slate-300 text-slate-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                placeholder="Instagram: bishalshrestha.me"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            {/* Email Field (Required) */}
+            <div>
+              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Email Address <span className="text-red-500">*</span></label>
               <input
                 type="email"
                 value={formData.email}
@@ -179,10 +221,13 @@ export default function Home({ darkMode }) {
                 className={`w-full px-4 py-3 rounded-xl border ${darkMode ? 'bg-slate-700 border-slate-600 text-white' : 'bg-white border-slate-300 text-slate-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 placeholder="your.email@example.com"
                 disabled={isSubmitting}
+                required
               />
             </div>
+
+            {/* Message Field (Required) */}
             <div>
-              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Message</label>
+              <label className={`block text-sm font-medium ${textSecondary} mb-2`}>Message <span className="text-red-500">*</span></label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -190,8 +235,10 @@ export default function Home({ darkMode }) {
                 className={`w-full px-4 py-3 rounded-xl border ${darkMode ? 'bg-slate-700 border-slate-600 text-white' : 'bg-white border-slate-300 text-slate-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 placeholder="Your message here..."
                 disabled={isSubmitting}
+                required
               />
             </div>
+            
             <button
               type="submit"
               disabled={isSubmitting}

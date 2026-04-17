@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 # Import football API integration and ensemble predictor
 from backend.football_api import football_api
 from backend.ensemble_predictor import AlignmentEnsemble, format_prediction_with_confidence
-from backend.database import Prediction, Actual, init_db, get_db_session
+from backend.database import Prediction, Actual, Message, init_db, get_db_session
 from backend.auth import verify_admin_credentials, verify_api_key, get_current_user
 
 app = FastAPI(
@@ -2179,6 +2179,14 @@ class ContactMessage(BaseModel):
     message: str
 
 
+class ContactMessageDB(BaseModel):
+    """Contact form message for database storage"""
+    sender_name: Optional[str] = None  # Optional
+    social_handle: Optional[str] = None  # Optional
+    email: EmailStr  # Required
+    message: str  # Required
+
+
 @app.post("/send-contact")
 async def send_contact_message(contact: ContactMessage, user: str = Depends(get_current_user)):
     """Send contact form message to admin email"""
@@ -2279,6 +2287,52 @@ async def send_contact_message(contact: ContactMessage, user: str = Depends(get_
     except Exception as e:
         print(f"❌ Error processing contact form: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error sending message: {str(e)}")
+
+
+@app.post("/contact-message")
+async def submit_contact_message(contact: ContactMessageDB, user: str = Depends(get_current_user)):
+    """Submit contact form message and save to database"""
+    try:
+        db = get_db_session()
+        
+        # Create new message record
+        message = Message(
+            sender_name=contact.sender_name,
+            social_handle=contact.social_handle,
+            email=contact.email,
+            message=contact.message
+        )
+        
+        # Add to database
+        db.add(message)
+        db.commit()
+        
+        message_id = str(message.message_id)
+        db.close()
+        
+        print(f"\n{'='*60}")
+        print(f"📧 NEW CONTACT FORM MESSAGE RECEIVED")
+        print(f"{'='*60}")
+        print(f"Message ID: {message_id}")
+        if contact.sender_name:
+            print(f"Name: {contact.sender_name}")
+        if contact.social_handle:
+            print(f"Instagram: {contact.social_handle}")
+        print(f"Email: {contact.email}")
+        print(f"Message: {contact.message}")
+        print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"{'='*60}\n")
+        
+        return {
+            "success": True,
+            "message": "Message sent successfully! We'll get back to you soon.",
+            "message_id": message_id,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        print(f"❌ Error saving contact message: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error saving message: {str(e)}")
 
 
 @app.post("/update-prediction-results")

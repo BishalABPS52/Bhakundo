@@ -326,14 +326,10 @@ def generate_gw33_predictions():
                 
                 logger.info(f"\n  Predicting: {home_team} vs {away_team}")
                 
-                # Check if prediction already exists
+                # Check if prediction already exists (will update if it does)
                 existing = db.query(Prediction).filter(
                     Prediction.match_id == match_id
                 ).first()
-                
-                if existing:
-                    logger.info(f"    ⏭️  Prediction already exists, skipping...")
-                    continue
                 
                 # Build features
                 feature_vector = build_match_features(
@@ -348,48 +344,69 @@ def generate_gw33_predictions():
                 logger.info(f"    📊 Outcome: {pred_result['outcome']} (conf: {pred_result['confidence']:.1%})")
                 logger.info(f"    📈 Probabilities: Home {pred_result['home_prob']:.1%} | Draw {pred_result['draw_prob']:.1%} | Away {pred_result['away_prob']:.1%}")
                 
-                # Save to database
-                prediction = Prediction(
-                    match_id=str(match_id),
-                    home_team=home_team,
-                    away_team=away_team,
-                    gameweek=33,
-                    match_date=match_date,
-                    season='2025-26',
-                    
-                    # Predicted scores
-                    predicted_home_goals=pred_result['home_goals'],
-                    predicted_away_goals=pred_result['away_goals'],
-                    predicted_outcome=pred_result['outcome'],
-                    
-                    # Base model probabilities (using ensemble)
-                    base_home_prob=pred_result['home_prob'],
-                    base_draw_prob=pred_result['draw_prob'],
-                    base_away_prob=pred_result['away_prob'],
-                    
-                    # Lineup model probabilities (using same for now)
-                    lineup_home_prob=pred_result['home_prob'],
-                    lineup_draw_prob=pred_result['draw_prob'],
-                    lineup_away_prob=pred_result['away_prob'],
-                    
-                    # Ensemble probabilities
-                    ensemble_home_prob=pred_result['home_prob'],
-                    ensemble_draw_prob=pred_result['draw_prob'],
-                    ensemble_away_prob=pred_result['away_prob'],
-                    
-                    # Confidence and verdict
-                    confidence=pred_result['confidence'],
-                    ensemble_method='XGBoost + LightGBM Weighted Ensemble',
-                    verdict=f"{pred_result['outcome']} (Confidence: {pred_result['confidence']:.1%}, Score: {pred_result['home_goals']}-{pred_result['away_goals']})",
-                    
-                    created_at=datetime.utcnow(),
-                    updated_at=datetime.utcnow()
-                )
+                # Save to database (update if exists, insert if new)
+                if existing:
+                    # Update existing prediction with new values
+                    existing.predicted_home_goals = pred_result['home_goals']
+                    existing.predicted_away_goals = pred_result['away_goals']
+                    existing.predicted_outcome = pred_result['outcome']
+                    existing.base_home_prob = pred_result['home_prob']
+                    existing.base_draw_prob = pred_result['draw_prob']
+                    existing.base_away_prob = pred_result['away_prob']
+                    existing.lineup_home_prob = pred_result['home_prob']
+                    existing.lineup_draw_prob = pred_result['draw_prob']
+                    existing.lineup_away_prob = pred_result['away_prob']
+                    existing.ensemble_home_prob = pred_result['home_prob']
+                    existing.ensemble_draw_prob = pred_result['draw_prob']
+                    existing.ensemble_away_prob = pred_result['away_prob']
+                    existing.confidence = pred_result['confidence']
+                    existing.ensemble_method = 'XGBoost + LightGBM Weighted Ensemble'
+                    existing.verdict = f"{pred_result['outcome']} (Confidence: {pred_result['confidence']:.1%}, Score: {pred_result['home_goals']}-{pred_result['away_goals']})"
+                    existing.updated_at = datetime.utcnow()
+                    logger.info(f"    ♻️  Updated existing prediction")
+                else:
+                    # Create new prediction
+                    prediction = Prediction(
+                        match_id=str(match_id),
+                        home_team=home_team,
+                        away_team=away_team,
+                        gameweek=33,
+                        match_date=match_date,
+                        season='2025-26',
+                        
+                        # Predicted scores
+                        predicted_home_goals=pred_result['home_goals'],
+                        predicted_away_goals=pred_result['away_goals'],
+                        predicted_outcome=pred_result['outcome'],
+                        
+                        # Base model probabilities (using ensemble)
+                        base_home_prob=pred_result['home_prob'],
+                        base_draw_prob=pred_result['draw_prob'],
+                        base_away_prob=pred_result['away_prob'],
+                        
+                        # Lineup model probabilities (using same for now)
+                        lineup_home_prob=pred_result['home_prob'],
+                        lineup_draw_prob=pred_result['draw_prob'],
+                        lineup_away_prob=pred_result['away_prob'],
+                        
+                        # Ensemble probabilities
+                        ensemble_home_prob=pred_result['home_prob'],
+                        ensemble_draw_prob=pred_result['draw_prob'],
+                        ensemble_away_prob=pred_result['away_prob'],
+                        
+                        # Confidence and verdict
+                        confidence=pred_result['confidence'],
+                        ensemble_method='XGBoost + LightGBM Weighted Ensemble',
+                        verdict=f"{pred_result['outcome']} (Confidence: {pred_result['confidence']:.1%}, Score: {pred_result['home_goals']}-{pred_result['away_goals']})",
+                        
+                        created_at=datetime.utcnow(),
+                        updated_at=datetime.utcnow()
+                    )
+                    db.add(prediction)
+                    logger.info(f"    ✅ Created new prediction")
                 
-                db.add(prediction)
                 db.commit()
                 predictions_saved += 1
-                logger.info(f"    ✅ Saved to database")
                 
             except Exception as e:
                 logger.error(f"    ❌ Error processing {home_team} vs {away_team}: {e}")

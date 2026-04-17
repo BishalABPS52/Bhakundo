@@ -3,7 +3,7 @@ Database module for storing prediction history
 Uses SQLAlchemy with PostgreSQL
 """
 
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, JSON, Text, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, JSON, Text, Boolean, Uuid
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from datetime import datetime
@@ -11,6 +11,7 @@ import os
 from typing import Optional
 from dotenv import load_dotenv
 from pathlib import Path
+import uuid
 
 # Load environment variables from backend/.env (works regardless of cwd)
 _ENV_FILE = Path(__file__).resolve().parent / ".env"
@@ -146,6 +147,21 @@ class Standing(Base):
     
     def __repr__(self):
         return f"<Standing {self.position}. {self.team} - {self.points}pts (GW{self.gameweek})>"
+
+
+class Message(Base):
+    """Store contact form messages"""
+    __tablename__ = "messages"
+    
+    message_id = Column(Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    sender_name = Column(String(100), nullable=True)  # Optional
+    social_handle = Column(Text, nullable=True)  # Optional (Instagram handle)
+    email = Column(String(255), nullable=False)  # Required
+    message = Column(Text, nullable=False)  # Required
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+    
+    def __repr__(self):
+        return f"<Message {self.message_id}: {self.email} at {self.created_at}>"
 
 
 def init_db():
