@@ -501,9 +501,6 @@ export default function GameOfGW({ darkMode }) {
         {data.reason && (
           <div className="px-5 pb-5">
             <div className={`backdrop-blur-md rounded-lg p-3 text-center border ${darkMode ? 'bg-slate-700/40 border-slate-600/50 text-slate-100' : 'bg-blue-50/40 border-blue-200 text-slate-900'}`}>
-              <p className={`text-xs sm:text-sm font-bold uppercase tracking-wide ${darkMode ? 'text-slate-300' : 'text-blue-600'}`}>
-                Reason :
-              </p>
               <p className="text-sm sm:text-base font-semibold mt-1">
                 {data.reason}
               </p>
